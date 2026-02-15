@@ -737,6 +737,9 @@ WRITE_ASCII 0x248 ~c0wlglas~ #8  // override
 WRITE_ASCII 0x280 ~c0wlglas~ #32 // death variable
 
 COPY_EXISTING ~dempitsu.cre~ ~override/c0wlpits.cre~
+WRITE_BYTE 0x24 160
+WRITE_BYTE 0x26 160
+WRITE_BYTE 0x52 0
 WRITE_ASCII 0x248 ~c0wlpits~ #8  // override
 WRITE_ASCII 0x280 ~c0wlpits~ #32 // death variable
 
@@ -3181,7 +3184,7 @@ END
 	  savebonus = 0
 END
 
-COPY_EXISTING ~c0wl107.spl~ ~override/c0wl107#.spl~
+COPY_EXISTING ~c0wl107r.spl~ ~override/c0wl107#.spl~
   LPF ADD_SPELL_EFFECT
     INT_VAR
 	  opcode = 321
@@ -3228,7 +3231,7 @@ Saving Throw: Neg.
 
 This eldritch essence invocation allows the warlock to change <PRO_HISHER> eldritch blast into a beshadowed blast. The beshadowed blast reduces the Eldritch Blast's damage to d4, but forces any creature struck to make a Save vs. Death at -1 (additional -1 penalty per two points of caster's Charisma above 17) or become blinded, receiving a -4 penalty to attack rolls and Armor Class as well as halved movement rate.~
 
-COPY_EXISTING ~c0wl201.spl~ ~override/c0wl201#.spl~
+COPY_EXISTING ~c0wl201r.spl~ ~override/c0wl201#.spl~
   LPF ADD_SPELL_EFFECT
     INT_VAR
 	  opcode = 321
@@ -6581,7 +6584,7 @@ Choosing this ability allows the wizard to cast one additional Dark Invocation.~
 COPY_EXISTING ~c0wl511.spl~ ~override~
 SAY NAME1 ~Call Fiend~
 SAY UNIDENTIFIED_DESC ~CALL FIEND
-This ability allows the warlock to call upon a powerful fiend from the Lower Planes. Unlike the wizard, the fiend summoned is under the warlock's control and does not need to be warded by a Protection from Evil spell. There is a 50% chance to summon a nabassu, a 35% chance to summon a glabrezu and a 15% chance to summon a pit fiend.~ 
+This ability allows the warlock to call upon a powerful pit fiend from the Lower Planes. Unlike the wizard, the fiend summoned is under the warlock's control and does not need to be warded by a Protection from Evil spell.~ 
 
  ACTION_FOR_EACH allspells IN 104 105 106E 106F 107E 107F 108 109 110 111 112 113 114 200 201E 201F 202E 202F 203E 203F 204 205 206 207 208 209 210 211 300 301E 301F 302 302E 302F 303 303E 303F 304 304E 304F 305 306 307 308 309 310 400 401 401E 401F 402 402E 402F 403 404 405 406 407 408 505 506E 505F 511 BEGIN
   ACTION_IF FILE_EXISTS_IN_GAME ~C0WL%allspells%.SPL~ BEGIN
