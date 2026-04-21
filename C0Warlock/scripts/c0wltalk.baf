@@ -1,7 +1,9 @@
 // Dialog
 
 IF
+  OR(2)
   TriggerOverride(LastSummonerOf(),HaveKnownSpellRES("c0wl106"))
+  TriggerOverride(LastSummonerOf(),HaveKnownSpellRES("c0w^106"))
 THEN
   RESPONSE #100
 	ActionOverride(LastSummonerOf(),ReallyForceSpellRES("c0wl106a",Myself))
@@ -9,7 +11,9 @@ THEN
 END
 
 IF
+  OR(2)
   TriggerOverride(LastSummonerOf(),HaveKnownSpellRES("c0wl107"))
+  TriggerOverride(LastSummonerOf(),HaveKnownSpellRES("c0w^107"))
 THEN
   RESPONSE #100
 	ActionOverride(LastSummonerOf(),ReallyForceSpellRES("c0wl107a",Myself))
@@ -17,7 +21,9 @@ THEN
 END
 
 IF
+  OR(2)
   TriggerOverride(LastSummonerOf(),HaveKnownSpellRES("c0wl201"))
+  TriggerOverride(LastSummonerOf(),HaveKnownSpellRES("c0w^201"))
 THEN
   RESPONSE #100
 	ActionOverride(LastSummonerOf(),ReallyForceSpellRES("c0wl201a",Myself))
@@ -25,7 +31,9 @@ THEN
 END
 
 IF
+  OR(2)
   TriggerOverride(LastSummonerOf(),HaveKnownSpellRES("c0wl202"))
+  TriggerOverride(LastSummonerOf(),HaveKnownSpellRES("c0w^202"))
 THEN
   RESPONSE #100
 	ActionOverride(LastSummonerOf(),ReallyForceSpellRES("c0wl202a",Myself))
@@ -33,7 +41,9 @@ THEN
 END
 
 IF
+  OR(2)
   TriggerOverride(LastSummonerOf(),HaveKnownSpellRES("c0wl203"))
+  TriggerOverride(LastSummonerOf(),HaveKnownSpellRES("c0w^203"))
 THEN
   RESPONSE #100
 	ActionOverride(LastSummonerOf(),ReallyForceSpellRES("c0wl203a",Myself))
@@ -41,7 +51,9 @@ THEN
 END
 
 IF
+  OR(2)
   TriggerOverride(LastSummonerOf(),HaveKnownSpellRES("c0wl301"))
+  TriggerOverride(LastSummonerOf(),HaveKnownSpellRES("c0w^301"))
 THEN
   RESPONSE #100
 	ActionOverride(LastSummonerOf(),ReallyForceSpellRES("c0wl301a",Myself))
@@ -49,7 +61,9 @@ THEN
 END
 
 IF
+  OR(2)
   TriggerOverride(LastSummonerOf(),HaveKnownSpellRES("c0wl302"))
+  TriggerOverride(LastSummonerOf(),HaveKnownSpellRES("c0w^302"))
 THEN
   RESPONSE #100
 	ActionOverride(LastSummonerOf(),ReallyForceSpellRES("c0wl302a",Myself))
@@ -57,7 +71,9 @@ THEN
 END
 
 IF
+  OR(2)
   TriggerOverride(LastSummonerOf(),HaveKnownSpellRES("c0wl303"))
+  TriggerOverride(LastSummonerOf(),HaveKnownSpellRES("c0w^303"))
 THEN
   RESPONSE #100
 	ActionOverride(LastSummonerOf(),ReallyForceSpellRES("c0wl303a",Myself))
@@ -65,7 +81,9 @@ THEN
 END
 
 IF
+  OR(2)
   TriggerOverride(LastSummonerOf(),HaveKnownSpellRES("c0wl304"))
+  TriggerOverride(LastSummonerOf(),HaveKnownSpellRES("c0w^304"))
 THEN
   RESPONSE #100
 	ActionOverride(LastSummonerOf(),ReallyForceSpellRES("c0wl304a",Myself))
@@ -73,7 +91,9 @@ THEN
 END
 
 IF
+  OR(2)
   TriggerOverride(LastSummonerOf(),HaveKnownSpellRES("c0wl401"))
+  TriggerOverride(LastSummonerOf(),HaveKnownSpellRES("c0w^401"))
 THEN
   RESPONSE #100
 	ActionOverride(LastSummonerOf(),ReallyForceSpellRES("c0wl401a",Myself))
@@ -81,7 +101,9 @@ THEN
 END
 
 IF
+  OR(2)
   TriggerOverride(LastSummonerOf(),HaveKnownSpellRES("c0wl402"))
+  TriggerOverride(LastSummonerOf(),HaveKnownSpellRES("c0w^402"))
 THEN
   RESPONSE #100
 	ActionOverride(LastSummonerOf(),ReallyForceSpellRES("c0wl402a",Myself))

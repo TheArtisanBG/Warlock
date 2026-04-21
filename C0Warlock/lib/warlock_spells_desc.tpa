@@ -150,7 +150,7 @@ Casting Time: 2
 Area of Effect: 20-ft. from caster
 Saving Throw: None
 
-With this invocation, the warlock surrounds <PRO_HIMHER>self with a malignant aura which floods the surrounding area of negative energy that preys upon the weakened. Any creature with current hit points lower than the warlock's level within a 20-ft. radius of the warlock is slain instantly. For each slain enemy, the warlock gains 1 temporary hit point per 10 caster levels for 8 hours.~
+With this invocation, the warlock surrounds <PRO_HIMHER>self with a malignant aura which floods the surrounding area of negative energy that preys upon the weakened. Any creature with current hit points lower than the warlock's level within a 20-ft. radius of the warlock is slain instantly. For each slain enemy, the warlock is healed for 1 hit point per 10 caster levels. Additional hit points above the warlock's maximum are gained as temporary hit points for 8 hours.~
 
 OUTER_SPRINT C0WL201-NAME ~Beshadowed Blast~
 OUTER_SPRINT C0WL201-DESC ~BESHADOWED BLAST
@@ -192,7 +192,7 @@ Casting Time: Same as blast shape
 Area of Effect: Same as blast shape
 Saving Throw: Neg.
 
-This eldritch essence invocation allows the warlock to change <PRO_HISHER> eldritch blast into a hellrime blast. A hellrime blast deals cold damage. Any creature struck by the attack must make a Save vs. Death at -1 (additional -1 penalty per two points of caster's Charisma above 17) or take a -4 penalty to Dexterity and Armor Class. The penalties from multiple hellrime blasts do not stack.~
+This eldritch essence invocation allows the warlock to change <PRO_HISHER> eldritch blast into a hellrime blast. A hellrime blast deals cold damage. Any creature struck by the attack must make a Save vs. Death at -1 (additional -1 penalty per two points of caster's Charisma above 17) or take a -4 penalty to Armor Class and halved Dexterity. The penalties from multiple hellrime blasts do not stack.~
 
 OUTER_SPRINT C0WL204-NAME ~Charm~
 OUTER_SPRINT C0WL204-DESC ~CHARM
@@ -248,7 +248,7 @@ Casting Time: 1
 Area of Effect: the caster
 Saving Throw: None
 
-This invocation allows the warlock to make a quick escape when necessary. Upon casting this invocation, the warlock teleports to a location within <PRO_HISHER> vision range, becoming invisible and leaving an illusion of <PRO_HIMHER>self behind for one round.~
+This invocation allows the warlock to make a quick escape when necessary. Upon casting this invocation, the warlock teleports to a location within <PRO_HISHER> vision range, becoming invisible and leaving an illusion of <PRO_HIMHER>self behind for one round. The illusion may not be controlled nor take any action, and is dispersed upon being attacked.~
 
 OUTER_SPRINT C0WL208-NAME ~The Dead Walk~
 OUTER_SPRINT C0WL208-DESC ~THE DEAD WALK
@@ -285,7 +285,7 @@ Saving Throw: None
 
 This invocation attempts to dispel magical effects upon a target creature. This includes effects given from spells, potions, and certain magical items such as wands. It does not, however, affect enchanted magical items. The chance of the dispel succeeding is determined by the level of the warlock and the level of the magic being dispelled. The base chance of successfully dispelling is 50%. For every level that the caster of Voracious Dispelling is above the original caster, <PRO_HISHER> chance of success increases by 5%. For every level that the caster of Voracious Dispelling is below the original caster, <PRO_HISHER> chance of success decreases by 10%. However, despite the difference in levels, there is always at least a 1% chance of success or failure. Thus, if a caster is 10 levels higher than the magic <PRO_HESHE> is trying to dispel, there is only a 1% chance of failure. Similarly, if the warlock is 4 levels lower than the magic <PRO_HESHE> is trying to dispel, there is only a 10% chance of success. Intuitively, this spell is almost useless if the target is 5 or more levels higher than the warlock.
 
-Additionally, for each enemy affected that is of a primarily spellcasting class (mage, cleric, druid, bard, shaman), they suffer 1 point of magic damage per 2 caster levels without save. Arcane spellcasters lose one memorized spell on a failed Save vs. Spells at -2.~
+Additionally, for each enemy affected that is of a primarily spellcasting class (mage, cleric, druid, bard, shaman), they suffer 1 point of magic damage per 2 caster levels without save. Targets also lose one memorized spell on a failed Save vs. Spells at -2.~
 
 OUTER_SPRINT C0WL210-NAME ~Walk Unseen~
 OUTER_SPRINT C0WL210-DESC ~WALK UNSEEN
@@ -369,7 +369,7 @@ Casting Time: Same as blast shape
 Area of Effect: Same as blast shape
 Saving Throw: None
 
-This eldritch essence invocation allows the warlock to change <PRO_HISHER> eldritch blast into a vitriolic blast. A vitriolic blast deals acidic damage and is formed from conjured acid, making it different from all other eldritch essences because it ignores Magic Resistance. Creatures struck by a vitriolic blast automatically take an extra 2d6 points of acid damage on following rounds. A creature taking damage in this way never takes more than 2d6 points of acid damage in a round, even if it has been hit by more than one vitriolic blast. Creatures immune to acid damage are not affected.~
+This eldritch essence invocation allows the warlock to change <PRO_HISHER> eldritch blast into a vitriolic blast. A vitriolic blast reduces the Eldritch Blast's damage to d4, but deals acidic damage and is formed from conjured acid, making it different from all other eldritch essences because it ignores Magic Resistance. Creatures struck by a vitriolic blast automatically take an extra 2d6 points of acid damage on following rounds. A creature taking damage in this way never takes more than 2d6 points of acid damage in a round, even if it has been hit by more than one vitriolic blast. Creatures immune to acid damage are not affected.~
 
 OUTER_SPRINT C0WL305-NAME ~Chilling Tentacles~
 OUTER_SPRINT C0WL305-DESC ~CHILLING TENTACLES
@@ -399,7 +399,7 @@ Saving Throw: None
 
 This invocation dispels the magical effects upon any enemies within the area. This includes effects given from spells, potions, and certain magical items such as wands. It does not, however, affect enchanted magical items. The chance of the dispel succeeding is determined by the level of the warlock and the level of the magic being dispelled. The base chance of successfully dispelling is 50%. For every level that the caster of Devour Magic is above the original caster, <PRO_HISHER> chance of success increases by 5%. For every level that the caster of Devour Magic is below the original caster, <PRO_HISHER> chance of success decreases by 10%. However, despite the difference in levels, there is always at least a 1% chance of success or failure. Thus, if a caster is 10 levels higher than the magic <PRO_HESHE> is trying to dispel, there is only a 1% chance of failure. Similarly, if the caster is 4 levels lower than the magic <PRO_HESHE> is trying to dispel, there is only a 10% chance of success. Intuitively, this spell is almost useless if the target is 5 or more levels higher than the warlock.
 
-Additionally, for each enemy affected that is of a primarily spellcasting class (mage, cleric, druid, bard, shaman), they take 2d6 magic damage, which are transferred to the warlock as temporary hit points for 1 turn. Arcane spellcasters lose one memorized spell on a failed Save vs. Spells.~
+Additionally, for each enemy affected that is of a primarily spellcasting class (mage, cleric, druid, bard, shaman), they take 2d6 magic damage, which are transferred to the warlock as temporary hit points for 1 turn. Targets also lose one memorized spell on a failed Save vs. Spells at -2.~
 
 OUTER_SPRINT C0WL307-NAME ~Tenacious Plague~
 OUTER_SPRINT C0WL307-DESC ~TENACIOUS PLAGUE
@@ -415,8 +415,8 @@ Saving Throw: None
 
 The Tenacious Plague spell attracts a cloud or swarm of magical insects to that jump first to the target, then to the nearest allies of the target. This swarm gathers at a point chosen by the caster within the spell's range and attacks any single creature the caster points to. Each victim may make a Saving Throw vs. Breath Weapon with a -4 penalty to escape the swarm; otherwise, they receive 1 point of piercing damage and 1d4 points of magical damage every 2 seconds for the duration of the spell. Moreover, each victim fights with a -2 penalty to <PRO_HISHER> attack roll and a -2 penalty to <PRO_HISHER> Armor Class. The swarm will repeatedly bite the target, making it very difficult to cast spells (50% chance of spell failure).~
 
-OUTER_SPRINT C0WL308-NAME ~Wall of Perilous Flame~
-OUTER_SPRINT C0WL308-DESC ~WALL OF PERILOUS FLAME
+OUTER_SPRINT C0WL308-NAME ~Wall of  Flame~
+OUTER_SPRINT C0WL308-DESC ~WALL OF  FLAME
 (Invocation/Evocation)
 
 Power: Greater
@@ -427,7 +427,7 @@ Casting Time: 6
 Area of Effect: 15 ft. radius
 Saving Throw: None
 
-You conjure a curtain of fire that deals 2d6 points of damage to any creature that attempts to pass through it. Half the wall's fire damage results from supernatural power and deals magical damage, therefore not being subject to being reduced by resistance to fire. The curtain of flame lasts for 3 rounds before dissipating.~
+You conjure a curtain of fire that deals 2d6 points of damage to any creature that attempts to pass through it. Half the wall's fire damage results from supernatural power and deals magical fire damage, therefore not being subject to being reduced by resistance to normal fire. The curtain of flame lasts for 3 rounds before dissipating.~
 
 OUTER_SPRINT C0WL309-NAME ~Nightmares Made Real~
 OUTER_SPRINT C0WL309-DESC ~NIGHTMARES MADE REAL 
@@ -483,7 +483,9 @@ Casting Time: Same as blast shape
 Area of Effect: Same as blast shape
 Saving Throw: None
 
-This eldritch essence invocation allows you to change your eldritch blast into an utterdark blast. An utterdark blast reduces the Eldritch Blast's damage to d4, but drains hit points from the target and transfers it to the caster. Any creature struck by the attack must also make a Save vs. Death at -4 (additional -1 penalty per two points of caster's Charisma above 17) or lose four levels for eight hours. If a target ever has as many negative levels as Hit Dice, it dies. The effects of this invocation do not stack with further applications of utterdark blast.~
+This eldritch essence invocation allows you to change your eldritch blast into an utterdark blast. An utterdark blast reduces the Eldritch Blast's damage to d4, but any creature struck by the attack must also make a Save vs. Death at -4 (additional -1 penalty per two points of caster's Charisma above 17) or lose four levels for eight hours. If a target ever has as many negative levels as Hit Dice, it dies. The effects of this invocation do not stack with further applications of utterdark blast.
+
+Undead creatures are immune to the effects of utterdark blast.~
 
 OUTER_SPRINT C0WL403-NAME ~Dark Foresight~
 OUTER_SPRINT C0WL403-DESC ~DARK FORESIGHT
@@ -511,7 +513,7 @@ Casting Time: 1
 Area of Effect: the caster
 Saving Throw: Special
 
-This invocation grants the warlock the effects of Improved Invisibility for three rounds. The invisibility cannot be dispelled, and at the end of its duration, a shock wave releases from the warlock's body in a small burst, dealing 4d6 magical damage to all nearby creatures and stunning them for one round. (Save vs. Death to avoid stun and half damage)~
+This invocation grants the warlock the effects of Improved Invisibility for three rounds. Unlike normal invisibility, the warlock remains invisible throughout the duration regardless of any actions taken. If Retributive Invisibility is dispelled in any way before the end of its duration, a shock wave releases from the warlock's body in a small burst, dealing 4d6 magical damage to all nearby enemies and stunning them for one round. (Save vs. Death to avoid stun and half damage)~
 
 OUTER_SPRINT C0WL405-NAME ~Word of Changing~
 OUTER_SPRINT C0WL405-DESC ~WORD OF CHANGING
@@ -532,6 +534,7 @@ The statistics of the form are as follows:
   Dexterity: 22
   -5 base Armor Class
   3 attacks per round
+  20% physical resistance
   Regenerate 1hp/3 seconds
   Immunity to weapons of +1 enchantment and below
   Immunity to charm, poison, domination, fear and confusion
@@ -548,7 +551,7 @@ Power: Dark
 Effective Spell Level: 6
 Range: Self
 Duration: 10 seconds
-Casting Time: 7
+Casting Time: 9
 Area of Effect: The caster
 Saving Throw: None
 

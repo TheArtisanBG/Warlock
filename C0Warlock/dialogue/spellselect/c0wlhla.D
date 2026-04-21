@@ -12,7 +12,7 @@ SAY ~Choose one Least Invocation:~
 + ~!HaveKnownSpellRES("c0wl111")~ + ~See the Unseen~ DO ~SetGlobal("C0WLHLA1","LOCALS",2) SetGlobal("C0WL111","LOCALS",2) AddSpecialAbility("C0WL111") AddSpecialAbility("C0W^111")~ EXIT 
 + ~!HaveKnownSpellRES("c0wl112")~ + ~Devil's Sight~ DO ~SetGlobal("C0WLHLA1","LOCALS",2) SetGlobal("C0WL112","LOCALS",2) AddSpecialAbility("C0WL112") AddSpecialAbility("C0W^112")~ EXIT 
 + ~!HaveKnownSpellRES("c0wl113")~ + ~Call of the Beast~ DO ~SetGlobal("C0WLHLA1","LOCALS",2) SetGlobal("C0WL113","LOCALS",2) AddSpecialAbility("C0WL113") AddSpecialAbility("C0W^113")~ EXIT 
-+ ~!HaveKnownSpellRES("c0wl114")~ + ~Soulrending Aura~ DO ~SetGlobal("C0WLHLA1","LOCALS",2) SetGlobal("C0WL114","LOCALS",2) AddSpecialAbility("C0WL114") AddSpecialAbility("C0W^114")~ EXIT 
++ ~!HaveKnownSpellRES("c0wl114")~ + ~Soulreaving Aura~ DO ~SetGlobal("C0WLHLA1","LOCALS",2) SetGlobal("C0WL114","LOCALS",2) AddSpecialAbility("C0WL114") AddSpecialAbility("C0W^114")~ EXIT 
 END
 
 IF ~Global("C0WLHLA2","LOCALS",1)~ lesser

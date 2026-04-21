@@ -1,6 +1,8 @@
 COMPILE ~%MOD_FOLDER%/dialogue/spellselect/c0wltalk.d~
 COMPILE ~%MOD_FOLDER%/dialogue/spellselect/c0wlhla.d~
 
+INCLUDE	~%MOD_FOLDER%/lib/WL_SEQUENCER_MENU.TPA~
+
 ACTION_IF FILE_EXISTS_IN_GAME ~baldur.bcs~ THEN BEGIN
 EXTEND_TOP ~baldur.bcs~ ~%MOD_FOLDER%/scripts/spellselect/baldur.baf~
 END
@@ -37,59 +39,130 @@ ACTION_IF NOT MOD_IS_INSTALLED ~BUBB_SPELL_MENU_EXTENDED/BUBB_SPELL_MENU_EXTENDE
 
 COPY ~%MOD_FOLDER%/2da/spellselect~ ~override~
 
-INCLUDE	~%MOD_FOLDER%/lib/WL_SEQUENCER_MENU.TPA~
-
-OUTER_SPRINT	title ~Invocation Selection~	OUTER_SPRINT	action ~Select an invocation to Learn~
-LAF	CREATE_SEQUENCER_MENU
-	INT_VAR	maxlevel = 4	exclude = 0x00004000	tip = RESOLVE_STR_REF	(~Select an invocation to learn from the provided lists. The total number of invocations allowed for the given level is shown below. An 'X' symbol means that the requirements have not been fulfilled.~)	name = RESOLVE_STR_REF	(~Invocation Selection~)	desc = RESOLVE_STR_REF	(~Invocation Selection~)	global = 2
-	STR_VAR	spelltable = ~C0WLLS~ spelllist = ~C0WLSP~ resref = ~C0WLLS~	icon = ~~	title	action
+ACTION_FOR_EACH invocations IN 104 105 108 109 110 111 112 113 114 204 205 206 207 208 209 210 211 305 306 307 308 309 310 403 404 405 406 407 408 106 107 201 202 203 301 302 303 304 401 402 BEGIN
+COPY_EXISTING ~C0WL%invocations%.spl~ ~override/C0WH%invocations%.spl~
+WRITE_SHORT 0x34 1 
 END
 
-ACTION_FOR_EACH lv1 IN C0WL104L C0WL105L C0WL106L C0WL107L C0WL108L C0WL109L C0WL110L C0WL111L C0WL112L C0WL113L C0WL114L BEGIN
-COPY_EXISTING ~%lv1%.spl~ ~override~
+OUTER_SPRINT	title ~Least Invocation~	OUTER_SPRINT	action ~Select an invocation to Learn~
+LAF	CREATE_SEQUENCER_MENU
+	INT_VAR	maxlevel = 1	exclude = 0x00004000	tip = RESOLVE_STR_REF	(~Select an invocation to learn from the provided lists. The total number of invocations allowed for the given level is shown below. An 'X' symbol means that the requirements have not been fulfilled.~)	name = RESOLVE_STR_REF	(~Invocation Selection~)	desc = RESOLVE_STR_REF	(~Invocation Selection~)	global = 1
+	STR_VAR	spelltable = ~C0WLLS1~ spelllist = ~C0WLSP1~ resref = ~C0WLLS1~	icon = ~C0WL008B~	title	action
+END
+
+OUTER_SPRINT	title ~Lesser Invocation~	OUTER_SPRINT	action ~Select an invocation to Learn~
+LAF	CREATE_SEQUENCER_MENU
+	INT_VAR	maxlevel = 1	exclude = 0x00004000	tip = RESOLVE_STR_REF	(~Select an invocation to learn from the provided lists. The total number of invocations allowed for the given level is shown below. An 'X' symbol means that the requirements have not been fulfilled.~)	name = RESOLVE_STR_REF	(~Invocation Selection~)	desc = RESOLVE_STR_REF	(~Invocation Selection~)	global = 1
+	STR_VAR	spelltable = ~C0WLLS2~ spelllist = ~C0WLSP2~ resref = ~C0WLLS2~	icon = ~C0WL008B~	title	action
+END
+
+OUTER_SPRINT	title ~Greater Invocation~	OUTER_SPRINT	action ~Select an invocation to Learn~
+LAF	CREATE_SEQUENCER_MENU
+	INT_VAR	maxlevel = 1	exclude = 0x00004000	tip = RESOLVE_STR_REF	(~Select an invocation to learn from the provided lists. The total number of invocations allowed for the given level is shown below. An 'X' symbol means that the requirements have not been fulfilled.~)	name = RESOLVE_STR_REF	(~Invocation Selection~)	desc = RESOLVE_STR_REF	(~Invocation Selection~)	global = 1
+	STR_VAR	spelltable = ~C0WLLS3~ spelllist = ~C0WLSP3~ resref = ~C0WLLS3~	icon = ~C0WL008B~	title	action
+END
+
+OUTER_SPRINT	title ~Dark Invocation~	OUTER_SPRINT	action ~Select an invocation to Learn~
+LAF	CREATE_SEQUENCER_MENU
+	INT_VAR	maxlevel = 1	exclude = 0x00004000	tip = RESOLVE_STR_REF	(~Select an invocation to learn from the provided lists. The total number of invocations allowed for the given level is shown below. An 'X' symbol means that the requirements have not been fulfilled.~)	name = RESOLVE_STR_REF	(~Invocation Selection~)	desc = RESOLVE_STR_REF	(~Invocation Selection~)	global = 1
+	STR_VAR	spelltable = ~C0WLLS4~ spelllist = ~C0WLSP4~ resref = ~C0WLLS4~	icon = ~C0WL008B~	title	action
+END
+
+OUTER_SPRINT	title ~Least Invocation~	OUTER_SPRINT	action ~Select an invocation to Learn~
+LAF	CREATE_SEQUENCER_MENU
+	INT_VAR	maxlevel = 1	exclude = 0x00004000	tip = RESOLVE_STR_REF	(~Select an invocation to learn from the provided lists. The total number of invocations allowed for the given level is shown below. An 'X' symbol means that the requirements have not been fulfilled.~)	name = RESOLVE_STR_REF	(~Invocation Selection~)	desc = RESOLVE_STR_REF	(~Invocation Selection~)	global = 1
+	STR_VAR	spelltable = ~C0WLH1~ spelllist = ~C0WLSP1~ resref = ~C0WLH1~	icon = ~C0WL008B~	title	action
+END
+
+OUTER_SPRINT	title ~Lesser Invocation~	OUTER_SPRINT	action ~Select an invocation to Learn~
+LAF	CREATE_SEQUENCER_MENU
+	INT_VAR	maxlevel = 1	exclude = 0x00004000	tip = RESOLVE_STR_REF	(~Select an invocation to learn from the provided lists. The total number of invocations allowed for the given level is shown below. An 'X' symbol means that the requirements have not been fulfilled.~)	name = RESOLVE_STR_REF	(~Invocation Selection~)	desc = RESOLVE_STR_REF	(~Invocation Selection~)	global = 1
+	STR_VAR	spelltable = ~C0WLH2~ spelllist = ~C0WLSP2~ resref = ~C0WLH2~	icon = ~C0WL008B~	title	action
+END
+
+OUTER_SPRINT	title ~Greater Invocation~	OUTER_SPRINT	action ~Select an invocation to Learn~
+LAF	CREATE_SEQUENCER_MENU
+	INT_VAR	maxlevel = 1	exclude = 0x00004000	tip = RESOLVE_STR_REF	(~Select an invocation to learn from the provided lists. The total number of invocations allowed for the given level is shown below. An 'X' symbol means that the requirements have not been fulfilled.~)	name = RESOLVE_STR_REF	(~Invocation Selection~)	desc = RESOLVE_STR_REF	(~Invocation Selection~)	global = 1
+	STR_VAR	spelltable = ~C0WLH3~ spelllist = ~C0WLSP3~ resref = ~C0WLH3~	icon = ~C0WL008B~	title	action
+END
+
+OUTER_SPRINT	title ~Dark Invocation~	OUTER_SPRINT	action ~Select an invocation to Learn~
+LAF	CREATE_SEQUENCER_MENU
+	INT_VAR	maxlevel = 1	exclude = 0x00004000	tip = RESOLVE_STR_REF	(~Select an invocation to learn from the provided lists. The total number of invocations allowed for the given level is shown below. An 'X' symbol means that the requirements have not been fulfilled.~)	name = RESOLVE_STR_REF	(~Invocation Selection~)	desc = RESOLVE_STR_REF	(~Invocation Selection~)	global = 1
+	STR_VAR	spelltable = ~C0WLH4~ spelllist = ~C0WLSP4~ resref = ~C0WLH4~	icon = ~C0WL008B~	title	action
+END
+
+ACTION_FOR_EACH lv1 IN 104 105 106 107 108 109 110 111 112 113 114 BEGIN
+COPY_EXISTING ~C0WH%lv1%L.spl~ ~override~
 LPF ALTER_SPELL_HEADER INT_VAR projectile = 0 END
 WRITE_SHORT 0x1C 4 
+WRITE_SHORT 0x34 1 
 SAY NAME1 #-1
 	LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 309	target = 1 timing = 1 parameter1 = 0 - 1 parameter2 = 1	STR_VAR	resource = EVAL ~C0WLSP1~	END
+	LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 172	target = 1 timing = 1 STR_VAR	resource = EVAL ~C0WL%lv1%~	END
+	LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 171	target = 1 timing = 1 STR_VAR	resource = EVAL ~C0WL%lv1%~	END
+	LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 326	target = 1 timing = 1 STR_VAR	resource = EVAL ~C0WLTAL2~	END
 END
 
-ACTION_FOR_EACH lv2 IN C0WL201L C0WL202L C0WL203L C0WL204L C0WL205L C0WL206L C0WL207L C0WL208L C0WL209L C0WL210L C0WL211L BEGIN
-COPY_EXISTING ~%lv2%.spl~ ~override~
+ACTION_FOR_EACH lv2 IN 201 202 203 204 205 206 207 208 209 210 211 BEGIN
+COPY_EXISTING ~C0WH%lv2%L.spl~ ~override~
 LPF ALTER_SPELL_HEADER INT_VAR projectile = 0 END
 WRITE_SHORT 0x1C 4 
+WRITE_SHORT 0x34 1 
 SAY NAME1 #-1
 	LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 309	target = 1 timing = 1 parameter1 = 0 - 1 parameter2 = 1	STR_VAR	resource = EVAL ~C0WLSP2~	END
+	LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 172	target = 1 timing = 1 STR_VAR	resource = EVAL ~C0WL%lv2%~	END
+	LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 171	target = 1 timing = 1 STR_VAR	resource = EVAL ~C0WL%lv2%~	END
+	LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 326	target = 1 timing = 1 STR_VAR	resource = EVAL ~C0WLTAL2~	END
 END
 
-ACTION_FOR_EACH lv3 IN C0WL301L C0WL302L C0WL303L C0WL304L C0WL305L C0WL306L C0WL307L C0WL308L C0WL309L C0WL310L BEGIN
-COPY_EXISTING ~%lv3%.spl~ ~override~
+ACTION_FOR_EACH lv3 IN 301 302 303 304 305 306 307 308 309 310 BEGIN
+COPY_EXISTING ~C0WH%lv3%L.spl~ ~override~
 LPF ALTER_SPELL_HEADER INT_VAR projectile = 0 END
 WRITE_SHORT 0x1C 4 
+WRITE_SHORT 0x34 1 
 SAY NAME1 #-1
 	LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 309	target = 1 timing = 1 parameter1 = 0 - 1 parameter2 = 1	STR_VAR	resource = EVAL ~C0WLSP3~	END
+	LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 172	target = 1 timing = 1 STR_VAR	resource = EVAL ~C0WL%lv3%~	END
+	LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 171	target = 1 timing = 1 STR_VAR	resource = EVAL ~C0WL%lv3%~	END
+	LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 326	target = 1 timing = 1 STR_VAR	resource = EVAL ~C0WLTAL2~	END
 END
 
-ACTION_FOR_EACH lv4 IN C0WL401L C0WL402L C0WL403L C0WL404L C0WL405L C0WL406L C0WL407L C0WL408L BEGIN
-COPY_EXISTING ~%lv4%.spl~ ~override~
+ACTION_FOR_EACH lv4 IN 401 402 403 404 405 406 407 408 BEGIN
+COPY_EXISTING ~C0WH%lv4%L.spl~ ~override~
 LPF ALTER_SPELL_HEADER INT_VAR projectile = 0 END
 WRITE_SHORT 0x1C 4 
+WRITE_SHORT 0x34 1 
 SAY NAME1 #-1
 	LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 309	target = 1 timing = 1 parameter1 = 0 - 1 parameter2 = 1	STR_VAR	resource = EVAL ~C0WLSP4~	END
+	LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 172	target = 1 timing = 1 STR_VAR	resource = EVAL ~C0WL%lv4%~	END
+	LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 171	target = 1 timing = 1 STR_VAR	resource = EVAL ~C0WL%lv4%~	END
+	LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 326	target = 1 timing = 1 STR_VAR	resource = EVAL ~C0WLTAL2~	END
 END
 
-ACTION_FOR_EACH blast IN C0WL106 C0WL107 C0WL201 C0WL202 C0WL203 C0WL301 C0WL302 C0WL303 C0WL304 C0WL401 C0WL402 BEGIN
-COPY_EXISTING ~%blast%L.spl~ ~override~
-LPF ALTER_SPELL_HEADER INT_VAR projectile = 0 END
-WRITE_SHORT 0x1C 4 
-SAY NAME1 #-1
-	LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 146	target = 1 timing = 1 parameter1 = 0 parameter2 = 1	STR_VAR	resource = EVAL ~%blast%A~	END
+COPY_EXISTING ~C0WLLS1.SPL~ ~OVERRIDE~
+LPF ADD_SPELL_EFFECT INT_VAR	opcode = 206 target = 1 duration = 2 STR_VAR resource = EVAL ~%SOURCE_RES%~
 END
-
-COPY_EXISTING ~C0WLLS.SPL~ ~OVERRIDE~
-LPF ADD_SPELL_EFFECT INT_VAR	opcode = 206 target = 1 duration = 2 STR_VAR resource = ~C0WLLS~
+COPY_EXISTING ~C0WLLS2.SPL~ ~OVERRIDE~
+LPF ADD_SPELL_EFFECT INT_VAR	opcode = 206 target = 1 duration = 2 STR_VAR resource = EVAL ~%SOURCE_RES%~
 END
-COPY_EXISTING ~C0WLLSD.SPL~ ~OVERRIDE~
-LPF ADD_SPELL_EFFECT INT_VAR	opcode = 266 target = 2 STR_VAR resource = ~C0WLLS~
+COPY_EXISTING ~C0WLLS3.SPL~ ~OVERRIDE~
+LPF ADD_SPELL_EFFECT INT_VAR	opcode = 206 target = 1 duration = 2 STR_VAR resource = EVAL ~%SOURCE_RES%~
+END
+COPY_EXISTING ~C0WLLS4.SPL~ ~OVERRIDE~
+LPF ADD_SPELL_EFFECT INT_VAR	opcode = 206 target = 1 duration = 2 STR_VAR resource = EVAL ~%SOURCE_RES%~
+END
+COPY_EXISTING ~C0WLLS1D.SPL~ ~OVERRIDE~
+LPF ADD_SPELL_EFFECT INT_VAR	opcode = 266 target = 2 STR_VAR resource = ~C0WLLS1~
+END
+COPY_EXISTING ~C0WLLS2D.SPL~ ~OVERRIDE~
+LPF ADD_SPELL_EFFECT INT_VAR	opcode = 266 target = 2 STR_VAR resource = ~C0WLLS2~
+END
+COPY_EXISTING ~C0WLLS3D.SPL~ ~OVERRIDE~
+LPF ADD_SPELL_EFFECT INT_VAR	opcode = 266 target = 2 STR_VAR resource = ~C0WLLS3~
+END
+COPY_EXISTING ~C0WLLS4D.SPL~ ~OVERRIDE~
+LPF ADD_SPELL_EFFECT INT_VAR	opcode = 266 target = 2 STR_VAR resource = ~C0WLLS4~
 END
 END
 
@@ -97,58 +170,137 @@ ACTION_IF MOD_IS_INSTALLED ~BUBB_SPELL_MENU_EXTENDED/BUBB_SPELL_MENU_EXTENDED.TP
 
 COPY ~%MOD_FOLDER%/2da/bubb/spellselect~ ~override~
 
-INCLUDE	~%MOD_FOLDER%/lib/WL_SEQUENCER_MENU.TPA~
+ACTION_FOR_EACH invocations IN 104 105 108 109 110 111 112 113 114 204 205 206 207 208 209 210 211 305 306 307 308 309 310 403 404 405 406 407 408 106 107 201 202 203 301 302 303 304 401 402 BEGIN
+COPY_EXISTING ~C0W^%invocations%.spl~ ~override/C0WH%invocations%.spl~
+WRITE_SHORT 0x34 1 
+END
 
-OUTER_SPRINT	title ~Invocation Selection~	OUTER_SPRINT	action ~Select an invocation to Learn~
+OUTER_SPRINT	title ~Least Invocation~	OUTER_SPRINT	action ~Select an invocation to Learn~
 LAF	CREATE_SEQUENCER_MENU
-	INT_VAR	maxlevel = 4	exclude = 0x00004000	tip = RESOLVE_STR_REF	(~Select an invocation to learn from the provided lists. The total number of invocations allowed for the given level is shown below. An 'X' symbol means that the requirements have not been fulfilled.~)	name = RESOLVE_STR_REF	(~Invocation Selection~)	desc = RESOLVE_STR_REF	(~Invocation Selection~)	global = 2
-	STR_VAR	spelltable = ~C0WLLS~ spelllist = ~C0WLSP~ resref = ~C0WLLS~	icon = ~~	title	action
+	INT_VAR	maxlevel = 1	exclude = 0x00004000	tip = RESOLVE_STR_REF	(~Select an invocation to learn from the provided lists. The total number of invocations allowed for the given level is shown below. An 'X' symbol means that the requirements have not been fulfilled.~)	name = RESOLVE_STR_REF	(~Invocation Selection~)	desc = RESOLVE_STR_REF	(~Invocation Selection~)	global = 1
+	STR_VAR	spelltable = ~C0WLLS1~ spelllist = ~C0WLSP1~ resref = ~C0WLLS1~	icon = ~C0WL008B~	title	action
+END
+
+OUTER_SPRINT	title ~Lesser Invocation~	OUTER_SPRINT	action ~Select an invocation to Learn~
+LAF	CREATE_SEQUENCER_MENU
+	INT_VAR	maxlevel = 1	exclude = 0x00004000	tip = RESOLVE_STR_REF	(~Select an invocation to learn from the provided lists. The total number of invocations allowed for the given level is shown below. An 'X' symbol means that the requirements have not been fulfilled.~)	name = RESOLVE_STR_REF	(~Invocation Selection~)	desc = RESOLVE_STR_REF	(~Invocation Selection~)	global = 1
+	STR_VAR	spelltable = ~C0WLLS2~ spelllist = ~C0WLSP2~ resref = ~C0WLLS2~	icon = ~C0WL008B~	title	action
+END
+
+OUTER_SPRINT	title ~Greater Invocation~	OUTER_SPRINT	action ~Select an invocation to Learn~
+LAF	CREATE_SEQUENCER_MENU
+	INT_VAR	maxlevel = 1	exclude = 0x00004000	tip = RESOLVE_STR_REF	(~Select an invocation to learn from the provided lists. The total number of invocations allowed for the given level is shown below. An 'X' symbol means that the requirements have not been fulfilled.~)	name = RESOLVE_STR_REF	(~Invocation Selection~)	desc = RESOLVE_STR_REF	(~Invocation Selection~)	global = 1
+	STR_VAR	spelltable = ~C0WLLS3~ spelllist = ~C0WLSP3~ resref = ~C0WLLS3~	icon = ~C0WL008B~	title	action
+END
+
+OUTER_SPRINT	title ~Dark Invocation~	OUTER_SPRINT	action ~Select an invocation to Learn~
+LAF	CREATE_SEQUENCER_MENU
+	INT_VAR	maxlevel = 1	exclude = 0x00004000	tip = RESOLVE_STR_REF	(~Select an invocation to learn from the provided lists. The total number of invocations allowed for the given level is shown below. An 'X' symbol means that the requirements have not been fulfilled.~)	name = RESOLVE_STR_REF	(~Invocation Selection~)	desc = RESOLVE_STR_REF	(~Invocation Selection~)	global = 1
+	STR_VAR	spelltable = ~C0WLLS4~ spelllist = ~C0WLSP4~ resref = ~C0WLLS4~	icon = ~C0WL008B~	title	action
+END
+
+OUTER_SPRINT	title ~Least Invocation~	OUTER_SPRINT	action ~Select an invocation to Learn~
+LAF	CREATE_SEQUENCER_MENU
+	INT_VAR	maxlevel = 1	exclude = 0x00004000	tip = RESOLVE_STR_REF	(~Select an invocation to learn from the provided lists. The total number of invocations allowed for the given level is shown below. An 'X' symbol means that the requirements have not been fulfilled.~)	name = RESOLVE_STR_REF	(~Invocation Selection~)	desc = RESOLVE_STR_REF	(~Invocation Selection~)	global = 1
+	STR_VAR	spelltable = ~C0WLH1~ spelllist = ~C0WLSP1~ resref = ~C0WLH1~	icon = ~C0WL008B~	title	action
+END
+
+OUTER_SPRINT	title ~Lesser Invocation~	OUTER_SPRINT	action ~Select an invocation to Learn~
+LAF	CREATE_SEQUENCER_MENU
+	INT_VAR	maxlevel = 1	exclude = 0x00004000	tip = RESOLVE_STR_REF	(~Select an invocation to learn from the provided lists. The total number of invocations allowed for the given level is shown below. An 'X' symbol means that the requirements have not been fulfilled.~)	name = RESOLVE_STR_REF	(~Invocation Selection~)	desc = RESOLVE_STR_REF	(~Invocation Selection~)	global = 1
+	STR_VAR	spelltable = ~C0WLH2~ spelllist = ~C0WLSP2~ resref = ~C0WLH2~	icon = ~C0WL008B~	title	action
+END
+
+OUTER_SPRINT	title ~Greater Invocation~	OUTER_SPRINT	action ~Select an invocation to Learn~
+LAF	CREATE_SEQUENCER_MENU
+	INT_VAR	maxlevel = 1	exclude = 0x00004000	tip = RESOLVE_STR_REF	(~Select an invocation to learn from the provided lists. The total number of invocations allowed for the given level is shown below. An 'X' symbol means that the requirements have not been fulfilled.~)	name = RESOLVE_STR_REF	(~Invocation Selection~)	desc = RESOLVE_STR_REF	(~Invocation Selection~)	global = 1
+	STR_VAR	spelltable = ~C0WLH3~ spelllist = ~C0WLSP3~ resref = ~C0WLH3~	icon = ~C0WL008B~	title	action
+END
+
+OUTER_SPRINT	title ~Dark Invocation~	OUTER_SPRINT	action ~Select an invocation to Learn~
+LAF	CREATE_SEQUENCER_MENU
+	INT_VAR	maxlevel = 1	exclude = 0x00004000	tip = RESOLVE_STR_REF	(~Select an invocation to learn from the provided lists. The total number of invocations allowed for the given level is shown below. An 'X' symbol means that the requirements have not been fulfilled.~)	name = RESOLVE_STR_REF	(~Invocation Selection~)	desc = RESOLVE_STR_REF	(~Invocation Selection~)	global = 1
+	STR_VAR	spelltable = ~C0WLH4~ spelllist = ~C0WLSP4~ resref = ~C0WLH4~	icon = ~C0WL008B~	title	action
 END
 
 ACTION_FOR_EACH lv1 IN 104 105 106 107 108 109 110 111 112 113 114 BEGIN
-COPY_EXISTING ~C0W^%lv1%L.spl~ ~override~
+COPY_EXISTING ~C0WH%lv1%L.spl~ ~override~
 LPF ALTER_SPELL_HEADER INT_VAR projectile = 0 END
 WRITE_SHORT 0x1C 4 
+WRITE_SHORT 0x34 1 
 SAY NAME1 #-1
 	LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 309	target = 1 timing = 1 parameter1 = 0 - 1 parameter2 = 1	STR_VAR	resource = EVAL ~C0WLSP1~	END
+	LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 172	target = 1 timing = 1 STR_VAR	resource = EVAL ~C0W^%lv1%~	END
+	LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 171	target = 1 timing = 1 STR_VAR	resource = EVAL ~C0W^%lv1%~	END
 	LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 172	target = 1 timing = 1 STR_VAR	resource = EVAL ~C0WL%lv1%~	END
 	LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 171	target = 1 timing = 1 STR_VAR	resource = EVAL ~C0WL%lv1%~	END
+	LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 326	target = 1 timing = 1 STR_VAR	resource = EVAL ~C0WLTAL2~	END
 END
 
 ACTION_FOR_EACH lv2 IN 201 202 203 204 205 206 207 208 209 210 211 BEGIN
-COPY_EXISTING ~C0W^%lv2%L.spl~ ~override~
+COPY_EXISTING ~C0WH%lv2%L.spl~ ~override~
 LPF ALTER_SPELL_HEADER INT_VAR projectile = 0 END
 WRITE_SHORT 0x1C 4 
+WRITE_SHORT 0x34 1 
 SAY NAME1 #-1
 	LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 309	target = 1 timing = 1 parameter1 = 0 - 1 parameter2 = 1	STR_VAR	resource = EVAL ~C0WLSP2~	END
+	LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 172	target = 1 timing = 1 STR_VAR	resource = EVAL ~C0W^%lv2%~	END
+	LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 171	target = 1 timing = 1 STR_VAR	resource = EVAL ~C0W^%lv2%~	END
 	LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 172	target = 1 timing = 1 STR_VAR	resource = EVAL ~C0WL%lv2%~	END
 	LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 171	target = 1 timing = 1 STR_VAR	resource = EVAL ~C0WL%lv2%~	END
+	LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 326	target = 1 timing = 1 STR_VAR	resource = EVAL ~C0WLTAL2~	END
 END
 
 ACTION_FOR_EACH lv3 IN 301 302 303 304 305 306 307 308 309 310 BEGIN
-COPY_EXISTING ~C0W^%lv3%L.spl~ ~override~
+COPY_EXISTING ~C0WH%lv3%L.spl~ ~override~
 LPF ALTER_SPELL_HEADER INT_VAR projectile = 0 END
 WRITE_SHORT 0x1C 4 
+WRITE_SHORT 0x34 1 
 SAY NAME1 #-1
 	LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 309	target = 1 timing = 1 parameter1 = 0 - 1 parameter2 = 1	STR_VAR	resource = EVAL ~C0WLSP3~	END
+	LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 172	target = 1 timing = 1 STR_VAR	resource = EVAL ~C0W^%lv3%~	END
+	LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 171	target = 1 timing = 1 STR_VAR	resource = EVAL ~C0W^%lv3%~	END
 	LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 172	target = 1 timing = 1 STR_VAR	resource = EVAL ~C0WL%lv3%~	END
 	LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 171	target = 1 timing = 1 STR_VAR	resource = EVAL ~C0WL%lv3%~	END
+	LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 326	target = 1 timing = 1 STR_VAR	resource = EVAL ~C0WLTAL2~	END
 END
 
 ACTION_FOR_EACH lv4 IN 401 402 403 404 405 406 407 408 BEGIN
-COPY_EXISTING ~C0W^%lv4%L.spl~ ~override~
+COPY_EXISTING ~C0WH%lv4%L.spl~ ~override~
 LPF ALTER_SPELL_HEADER INT_VAR projectile = 0 END
 WRITE_SHORT 0x1C 4 
+WRITE_SHORT 0x34 1 
 SAY NAME1 #-1
 	LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 309	target = 1 timing = 1 parameter1 = 0 - 1 parameter2 = 1	STR_VAR	resource = EVAL ~C0WLSP4~	END
+	LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 172	target = 1 timing = 1 STR_VAR	resource = EVAL ~C0W^%lv4%~	END
+	LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 171	target = 1 timing = 1 STR_VAR	resource = EVAL ~C0W^%lv4%~	END
 	LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 172	target = 1 timing = 1 STR_VAR	resource = EVAL ~C0WL%lv4%~	END
 	LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 171	target = 1 timing = 1 STR_VAR	resource = EVAL ~C0WL%lv4%~	END
+	LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 326	target = 1 timing = 1 STR_VAR	resource = EVAL ~C0WLTAL2~	END
 END
 
-COPY_EXISTING ~C0WLLS.SPL~ ~OVERRIDE~
-LPF ADD_SPELL_EFFECT INT_VAR	opcode = 206 target = 1 duration = 2 STR_VAR resource = ~C0WLLS~
+COPY_EXISTING ~C0WLLS1.SPL~ ~OVERRIDE~
+LPF ADD_SPELL_EFFECT INT_VAR	opcode = 206 target = 1 duration = 2 STR_VAR resource = EVAL ~%SOURCE_RES%~
 END
-COPY_EXISTING ~C0WLLSD.SPL~ ~OVERRIDE~
-LPF ADD_SPELL_EFFECT INT_VAR	opcode = 266 target = 2 STR_VAR resource = ~C0WLLS~
+COPY_EXISTING ~C0WLLS2.SPL~ ~OVERRIDE~
+LPF ADD_SPELL_EFFECT INT_VAR	opcode = 206 target = 1 duration = 2 STR_VAR resource = EVAL ~%SOURCE_RES%~
+END
+COPY_EXISTING ~C0WLLS3.SPL~ ~OVERRIDE~
+LPF ADD_SPELL_EFFECT INT_VAR	opcode = 206 target = 1 duration = 2 STR_VAR resource = EVAL ~%SOURCE_RES%~
+END
+COPY_EXISTING ~C0WLLS4.SPL~ ~OVERRIDE~
+LPF ADD_SPELL_EFFECT INT_VAR	opcode = 206 target = 1 duration = 2 STR_VAR resource = EVAL ~%SOURCE_RES%~
+END
+COPY_EXISTING ~C0WLLS1D.SPL~ ~OVERRIDE~
+LPF ADD_SPELL_EFFECT INT_VAR	opcode = 266 target = 2 STR_VAR resource = ~C0WLLS1~
+END
+COPY_EXISTING ~C0WLLS2D.SPL~ ~OVERRIDE~
+LPF ADD_SPELL_EFFECT INT_VAR	opcode = 266 target = 2 STR_VAR resource = ~C0WLLS2~
+END
+COPY_EXISTING ~C0WLLS3D.SPL~ ~OVERRIDE~
+LPF ADD_SPELL_EFFECT INT_VAR	opcode = 266 target = 2 STR_VAR resource = ~C0WLLS3~
+END
+COPY_EXISTING ~C0WLLS4D.SPL~ ~OVERRIDE~
+LPF ADD_SPELL_EFFECT INT_VAR	opcode = 266 target = 2 STR_VAR resource = ~C0WLLS4~
 END
 END

@@ -2,11 +2,12 @@ IF
 	TriggerOverride(Player1,ActionListEmpty())
 	Global("C0WLDisableOldSpellLearning","GLOBAL",0)
 	Kit(Player1,C0WLOCK)
-	OR(4)
+	OR(5)
 	TriggerOverride(Player1,GlobalGT("C0WLSP1","LOCALS",0))
 	TriggerOverride(Player1,GlobalGT("C0WLSP2","LOCALS",0))
 	TriggerOverride(Player1,GlobalGT("C0WLSP3","LOCALS",0))
 	TriggerOverride(Player1,GlobalGT("C0WLSP4","LOCALS",0))
+	TriggerOverride(Player1,GlobalGT("C0WLSWAP","LOCALS",0))
 THEN
   RESPONSE #100
 	Wait(1)
@@ -18,11 +19,12 @@ IF
 	TriggerOverride(Player2,ActionListEmpty())
 	Global("C0WLDisableOldSpellLearning","GLOBAL",0)
 	Kit(Player2,C0WLOCK)
-	OR(4)
+	OR(5)
 	TriggerOverride(Player2,GlobalGT("C0WLSP1","LOCALS",0))
 	TriggerOverride(Player2,GlobalGT("C0WLSP2","LOCALS",0))
 	TriggerOverride(Player2,GlobalGT("C0WLSP3","LOCALS",0))
 	TriggerOverride(Player2,GlobalGT("C0WLSP4","LOCALS",0))
+	TriggerOverride(Player2,GlobalGT("C0WLSWAP","LOCALS",0))
 THEN
   RESPONSE #100
 	Wait(1)
@@ -34,11 +36,12 @@ IF
 	TriggerOverride(Player3,ActionListEmpty())
 	Global("C0WLDisableOldSpellLearning","GLOBAL",0)
 	Kit(Player3,C0WLOCK)
-	OR(4)
+	OR(5)
 	TriggerOverride(Player3,GlobalGT("C0WLSP1","LOCALS",0))
 	TriggerOverride(Player3,GlobalGT("C0WLSP2","LOCALS",0))
 	TriggerOverride(Player3,GlobalGT("C0WLSP3","LOCALS",0))
 	TriggerOverride(Player3,GlobalGT("C0WLSP4","LOCALS",0))
+	TriggerOverride(Player3,GlobalGT("C0WLSWAP","LOCALS",0))
 THEN
   RESPONSE #100
 	Wait(1)
@@ -50,11 +53,12 @@ IF
 	TriggerOverride(Player4,ActionListEmpty())
 	Global("C0WLDisableOldSpellLearning","GLOBAL",0)
 	Kit(Player4,C0WLOCK)
-	OR(4)
+	OR(5)
 	TriggerOverride(Player4,GlobalGT("C0WLSP1","LOCALS",0))
 	TriggerOverride(Player4,GlobalGT("C0WLSP2","LOCALS",0))
 	TriggerOverride(Player4,GlobalGT("C0WLSP3","LOCALS",0))
 	TriggerOverride(Player4,GlobalGT("C0WLSP4","LOCALS",0))
+	TriggerOverride(Player4,GlobalGT("C0WLSWAP","LOCALS",0))
 THEN
   RESPONSE #100
 	Wait(1)
@@ -66,11 +70,12 @@ IF
 	TriggerOverride(Player5,ActionListEmpty())
 	Global("C0WLDisableOldSpellLearning","GLOBAL",0)
 	Kit(Player5,C0WLOCK)
-	OR(4)
+	OR(5)
 	TriggerOverride(Player5,GlobalGT("C0WLSP1","LOCALS",0))
 	TriggerOverride(Player5,GlobalGT("C0WLSP2","LOCALS",0))
 	TriggerOverride(Player5,GlobalGT("C0WLSP3","LOCALS",0))
 	TriggerOverride(Player5,GlobalGT("C0WLSP4","LOCALS",0))
+	TriggerOverride(Player5,GlobalGT("C0WLSWAP","LOCALS",0))
 THEN
   RESPONSE #100
 	Wait(1)
@@ -82,11 +87,12 @@ IF
 	TriggerOverride(Player6,ActionListEmpty())
 	Global("C0WLDisableOldSpellLearning","GLOBAL",0)
 	Kit(Player6,C0WLOCK)
-	OR(4)
+	OR(5)
 	TriggerOverride(Player6,GlobalGT("C0WLSP1","LOCALS",0))
 	TriggerOverride(Player6,GlobalGT("C0WLSP2","LOCALS",0))
 	TriggerOverride(Player6,GlobalGT("C0WLSP3","LOCALS",0))
 	TriggerOverride(Player6,GlobalGT("C0WLSP4","LOCALS",0))
+	TriggerOverride(Player6,GlobalGT("C0WLSWAP","LOCALS",0))
 THEN
   RESPONSE #100
 	Wait(1)

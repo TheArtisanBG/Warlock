@@ -5,83 +5,229 @@ THEN
 	SetGlobal("C0WLDisableOldSpellLearning","GLOBAL",1)
 END
 
+/// LEAST INVOCATION
+
 IF
 	TriggerOverride(Player1,ActionListEmpty())
 	Kit(Player1,C0WLOCK)
-	OR(4)
 	TriggerOverride(Player1,GlobalGT("C0WLSP1","LOCALS",0))
-	TriggerOverride(Player1,GlobalGT("C0WLSP2","LOCALS",0))
-	TriggerOverride(Player1,GlobalGT("C0WLSP3","LOCALS",0))
-	TriggerOverride(Player1,GlobalGT("C0WLSP4","LOCALS",0))
+	!TriggerOverride(Player1,Global("C0WLHLA1","LOCALS",1))
 THEN
   RESPONSE #100
-	ActionOverride(Player1,ApplySpellRES("C0WLLS",Myself))
+	ActionOverride(Player1,ApplySpellRES("C0WLLS1",Myself))
+	Continue()
 END
 
 IF
 	TriggerOverride(Player2,ActionListEmpty())
 	Kit(Player2,C0WLOCK)
-	OR(4)
 	TriggerOverride(Player2,GlobalGT("C0WLSP1","LOCALS",0))
-	TriggerOverride(Player2,GlobalGT("C0WLSP2","LOCALS",0))
-	TriggerOverride(Player2,GlobalGT("C0WLSP3","LOCALS",0))
-	TriggerOverride(Player2,GlobalGT("C0WLSP4","LOCALS",0))
+	!TriggerOverride(Player2,Global("C0WLHLA1","LOCALS",1))
 THEN
   RESPONSE #100
-	ActionOverride(Player2,ApplySpellRES("C0WLLS",Myself))
+	ActionOverride(Player2,ApplySpellRES("C0WLLS1",Myself))
+	Continue()
 END
 
 IF
 	TriggerOverride(Player3,ActionListEmpty())
 	Kit(Player3,C0WLOCK)
-	OR(4)
 	TriggerOverride(Player3,GlobalGT("C0WLSP1","LOCALS",0))
-	TriggerOverride(Player3,GlobalGT("C0WLSP2","LOCALS",0))
-	TriggerOverride(Player3,GlobalGT("C0WLSP3","LOCALS",0))
-	TriggerOverride(Player3,GlobalGT("C0WLSP4","LOCALS",0))
+	!TriggerOverride(Player3,Global("C0WLHLA1","LOCALS",1))
 THEN
   RESPONSE #100
-	ActionOverride(Player3,ApplySpellRES("C0WLLS",Myself))
+	ActionOverride(Player3,ApplySpellRES("C0WLLS1",Myself))
+	Continue()
 END
 
 IF
 	TriggerOverride(Player4,ActionListEmpty())
 	Kit(Player4,C0WLOCK)
-	OR(4)
 	TriggerOverride(Player4,GlobalGT("C0WLSP1","LOCALS",0))
-	TriggerOverride(Player4,GlobalGT("C0WLSP2","LOCALS",0))
-	TriggerOverride(Player4,GlobalGT("C0WLSP3","LOCALS",0))
-	TriggerOverride(Player4,GlobalGT("C0WLSP4","LOCALS",0))
+	!TriggerOverride(Player4,Global("C0WLHLA1","LOCALS",1))
 THEN
   RESPONSE #100
-	ActionOverride(Player4,ApplySpellRES("C0WLLS",Myself))
+	ActionOverride(Player4,ApplySpellRES("C0WLLS1",Myself))
+	Continue()
 END
 
 IF
 	TriggerOverride(Player5,ActionListEmpty())
 	Kit(Player5,C0WLOCK)
-	OR(4)
 	TriggerOverride(Player5,GlobalGT("C0WLSP1","LOCALS",0))
-	TriggerOverride(Player5,GlobalGT("C0WLSP2","LOCALS",0))
-	TriggerOverride(Player5,GlobalGT("C0WLSP3","LOCALS",0))
-	TriggerOverride(Player5,GlobalGT("C0WLSP4","LOCALS",0))
+	!TriggerOverride(Player5,Global("C0WLHLA1","LOCALS",1))
 THEN
   RESPONSE #100
-	ActionOverride(Player5,ApplySpellRES("C0WLLS",Myself))
+	ActionOverride(Player5,ApplySpellRES("C0WLLS1",Myself))
+	Continue()
 END
 
 IF
 	TriggerOverride(Player6,ActionListEmpty())
 	Kit(Player6,C0WLOCK)
-	OR(4)
 	TriggerOverride(Player6,GlobalGT("C0WLSP1","LOCALS",0))
-	TriggerOverride(Player6,GlobalGT("C0WLSP2","LOCALS",0))
-	TriggerOverride(Player6,GlobalGT("C0WLSP3","LOCALS",0))
-	TriggerOverride(Player6,GlobalGT("C0WLSP4","LOCALS",0))
+	!TriggerOverride(Player6,Global("C0WLHLA1","LOCALS",1))
 THEN
   RESPONSE #100
-	ActionOverride(Player6,ApplySpellRES("C0WLLS",Myself))
+	ActionOverride(Player6,ApplySpellRES("C0WLLS1",Myself))
+	Continue()
 END
+
+/// LESSER INVOCATION
+
+IF
+	TriggerOverride(Player1,ActionListEmpty())
+	Kit(Player1,C0WLOCK)
+	!TriggerOverride(Player1,GlobalGT("C0WLSP1","LOCALS",0))
+	TriggerOverride(Player1,GlobalGT("C0WLSP2","LOCALS",0))
+	!TriggerOverride(Player1,Global("C0WLHLA2","LOCALS",1))
+THEN
+  RESPONSE #100
+	ActionOverride(Player1,ApplySpellRES("C0WLLS2",Myself))
+	Continue()
+END
+
+IF
+	TriggerOverride(Player2,ActionListEmpty())
+	Kit(Player2,C0WLOCK)
+	!TriggerOverride(Player2,GlobalGT("C0WLSP1","LOCALS",0))
+	TriggerOverride(Player2,GlobalGT("C0WLSP2","LOCALS",0))
+	!TriggerOverride(Player1,Global("C0WLHLA2","LOCALS",1))
+THEN
+  RESPONSE #100
+	ActionOverride(Player2,ApplySpellRES("C0WLLS2",Myself))
+	Continue()
+END
+
+IF
+	TriggerOverride(Player3,ActionListEmpty())
+	Kit(Player3,C0WLOCK)
+	!TriggerOverride(Player3,GlobalGT("C0WLSP1","LOCALS",0))
+	TriggerOverride(Player3,GlobalGT("C0WLSP2","LOCALS",0))
+	!TriggerOverride(Player3,Global("C0WLHLA2","LOCALS",1))
+THEN
+  RESPONSE #100
+	ActionOverride(Player3,ApplySpellRES("C0WLLS2",Myself))
+	Continue()
+END
+
+IF
+	TriggerOverride(Player4,ActionListEmpty())
+	Kit(Player4,C0WLOCK)
+	!TriggerOverride(Player4,GlobalGT("C0WLSP1","LOCALS",0))
+	TriggerOverride(Player4,GlobalGT("C0WLSP2","LOCALS",0))
+	!TriggerOverride(Player4,Global("C0WLHLA2","LOCALS",1))
+THEN
+  RESPONSE #100
+	ActionOverride(Player4,ApplySpellRES("C0WLLS2",Myself))
+	Continue()
+END
+
+IF
+	TriggerOverride(Player5,ActionListEmpty())
+	Kit(Player5,C0WLOCK)
+	!TriggerOverride(Player5,GlobalGT("C0WLSP1","LOCALS",0))
+	TriggerOverride(Player5,GlobalGT("C0WLSP2","LOCALS",0))
+	!TriggerOverride(Player5,Global("C0WLHLA2","LOCALS",1))
+THEN
+  RESPONSE #100
+	ActionOverride(Player5,ApplySpellRES("C0WLLS2",Myself))
+	Continue()
+END
+
+IF
+	TriggerOverride(Player6,ActionListEmpty())
+	Kit(Player6,C0WLOCK)
+	!TriggerOverride(Player6,GlobalGT("C0WLSP1","LOCALS",0))
+	TriggerOverride(Player6,GlobalGT("C0WLSP2","LOCALS",0))
+	!TriggerOverride(Player6,Global("C0WLHLA2","LOCALS",1))
+THEN
+  RESPONSE #100
+	ActionOverride(Player6,ApplySpellRES("C0WLLS2",Myself))
+	Continue()
+END
+
+/// GREATER INVOCATION
+
+IF
+	TriggerOverride(Player1,ActionListEmpty())
+	Kit(Player1,C0WLOCK)
+	!TriggerOverride(Player1,GlobalGT("C0WLSP1","LOCALS",0))
+	!TriggerOverride(Player1,GlobalGT("C0WLSP2","LOCALS",0))
+	TriggerOverride(Player1,GlobalGT("C0WLSP3","LOCALS",0))
+	!TriggerOverride(Player1,Global("C0WLHLA3","LOCALS",1))
+THEN
+  RESPONSE #100
+	ActionOverride(Player1,ApplySpellRES("C0WLLS3",Myself))
+	Continue()
+END
+
+IF
+	TriggerOverride(Player2,ActionListEmpty())
+	Kit(Player2,C0WLOCK)
+	!TriggerOverride(Player2,GlobalGT("C0WLSP1","LOCALS",0))
+	!TriggerOverride(Player2,GlobalGT("C0WLSP2","LOCALS",0))
+	TriggerOverride(Player2,GlobalGT("C0WLSP3","LOCALS",0))
+	!TriggerOverride(Player2,Global("C0WLHLA3","LOCALS",1))
+THEN
+  RESPONSE #100
+	ActionOverride(Player2,ApplySpellRES("C0WLLS3",Myself))
+	Continue()
+END
+
+IF
+	TriggerOverride(Player3,ActionListEmpty())
+	Kit(Player3,C0WLOCK)
+	!TriggerOverride(Player3,GlobalGT("C0WLSP1","LOCALS",0))
+	!TriggerOverride(Player3,GlobalGT("C0WLSP2","LOCALS",0))
+	TriggerOverride(Player3,GlobalGT("C0WLSP3","LOCALS",0))
+	!TriggerOverride(Player3,Global("C0WLHLA3","LOCALS",1))
+THEN
+  RESPONSE #100
+	ActionOverride(Player3,ApplySpellRES("C0WLLS3",Myself))
+	Continue()
+END
+
+IF
+	TriggerOverride(Player4,ActionListEmpty())
+	Kit(Player4,C0WLOCK)
+	!TriggerOverride(Player4,GlobalGT("C0WLSP1","LOCALS",0))
+	!TriggerOverride(Player4,GlobalGT("C0WLSP2","LOCALS",0))
+	TriggerOverride(Player4,GlobalGT("C0WLSP3","LOCALS",0))
+	!TriggerOverride(Player4,Global("C0WLHLA3","LOCALS",1))
+THEN
+  RESPONSE #100
+	ActionOverride(Player4,ApplySpellRES("C0WLLS3",Myself))
+	Continue()
+END
+
+IF
+	TriggerOverride(Player5,ActionListEmpty())
+	Kit(Player5,C0WLOCK)
+	!TriggerOverride(Player5,GlobalGT("C0WLSP1","LOCALS",0))
+	!TriggerOverride(Player5,GlobalGT("C0WLSP2","LOCALS",0))
+	TriggerOverride(Player5,GlobalGT("C0WLSP3","LOCALS",0))
+	!TriggerOverride(Player5,Global("C0WLHLA3","LOCALS",1))
+THEN
+  RESPONSE #100
+	ActionOverride(Player5,ApplySpellRES("C0WLLS3",Myself))
+	Continue()
+END
+
+IF
+	TriggerOverride(Player6,ActionListEmpty())
+	Kit(Player6,C0WLOCK)
+	!TriggerOverride(Player6,GlobalGT("C0WLSP1","LOCALS",0))
+	!TriggerOverride(Player6,GlobalGT("C0WLSP2","LOCALS",0))
+	TriggerOverride(Player6,GlobalGT("C0WLSP3","LOCALS",0))
+	!TriggerOverride(Player6,Global("C0WLHLA3","LOCALS",1))
+THEN
+  RESPONSE #100
+	ActionOverride(Player6,ApplySpellRES("C0WLLS3",Myself))
+	Continue()
+END
+
+/// DARK INVOCATION
 
 IF
 	TriggerOverride(Player1,ActionListEmpty())
@@ -89,15 +235,12 @@ IF
 	!TriggerOverride(Player1,GlobalGT("C0WLSP1","LOCALS",0))
 	!TriggerOverride(Player1,GlobalGT("C0WLSP2","LOCALS",0))
 	!TriggerOverride(Player1,GlobalGT("C0WLSP3","LOCALS",0))
-	!TriggerOverride(Player1,GlobalGT("C0WLSP4","LOCALS",0))
-	OR(4)
-	TriggerOverride(Player1,Global("C0WLHLA1","LOCALS",1))
-	TriggerOverride(Player1,Global("C0WLHLA2","LOCALS",1))
-	TriggerOverride(Player1,Global("C0WLHLA3","LOCALS",1))
-	TriggerOverride(Player1,Global("C0WLHLA4","LOCALS",1))
+	TriggerOverride(Player1,GlobalGT("C0WLSP4","LOCALS",0))
+	!TriggerOverride(Player1,Global("C0WLHLA4","LOCALS",1))
 THEN
   RESPONSE #100
-	ActionOverride(Player1,StartDialogOverride("C0WLHLA",Myself))
+	ActionOverride(Player1,ApplySpellRES("C0WLLS4",Myself))
+	Continue()
 END
 
 IF
@@ -106,15 +249,12 @@ IF
 	!TriggerOverride(Player2,GlobalGT("C0WLSP1","LOCALS",0))
 	!TriggerOverride(Player2,GlobalGT("C0WLSP2","LOCALS",0))
 	!TriggerOverride(Player2,GlobalGT("C0WLSP3","LOCALS",0))
-	!TriggerOverride(Player2,GlobalGT("C0WLSP4","LOCALS",0))
-	OR(4)
-	TriggerOverride(Player2,Global("C0WLHLA1","LOCALS",1))
-	TriggerOverride(Player2,Global("C0WLHLA2","LOCALS",1))
-	TriggerOverride(Player2,Global("C0WLHLA3","LOCALS",1))
-	TriggerOverride(Player2,Global("C0WLHLA4","LOCALS",1))
+	TriggerOverride(Player2,GlobalGT("C0WLSP4","LOCALS",0))
+	!TriggerOverride(Player2,Global("C0WLHLA4","LOCALS",1))
 THEN
   RESPONSE #100
-	ActionOverride(Player2,StartDialogOverride("C0WLHLA",Myself))
+	ActionOverride(Player2,ApplySpellRES("C0WLLS4",Myself))
+	Continue()
 END
 
 IF
@@ -123,15 +263,12 @@ IF
 	!TriggerOverride(Player3,GlobalGT("C0WLSP1","LOCALS",0))
 	!TriggerOverride(Player3,GlobalGT("C0WLSP2","LOCALS",0))
 	!TriggerOverride(Player3,GlobalGT("C0WLSP3","LOCALS",0))
-	!TriggerOverride(Player3,GlobalGT("C0WLSP4","LOCALS",0))
-	OR(4)
-	TriggerOverride(Player3,Global("C0WLHLA1","LOCALS",1))
-	TriggerOverride(Player3,Global("C0WLHLA2","LOCALS",1))
-	TriggerOverride(Player3,Global("C0WLHLA3","LOCALS",1))
-	TriggerOverride(Player3,Global("C0WLHLA4","LOCALS",1))
+	TriggerOverride(Player3,GlobalGT("C0WLSP4","LOCALS",0))
+	!TriggerOverride(Player3,Global("C0WLHLA4","LOCALS",1))
 THEN
   RESPONSE #100
-	ActionOverride(Player3,StartDialogOverride("C0WLHLA",Myself))
+	ActionOverride(Player3,ApplySpellRES("C0WLLS4",Myself))
+	Continue()
 END
 
 IF
@@ -140,15 +277,12 @@ IF
 	!TriggerOverride(Player4,GlobalGT("C0WLSP1","LOCALS",0))
 	!TriggerOverride(Player4,GlobalGT("C0WLSP2","LOCALS",0))
 	!TriggerOverride(Player4,GlobalGT("C0WLSP3","LOCALS",0))
-	!TriggerOverride(Player4,GlobalGT("C0WLSP4","LOCALS",0))
-	OR(4)
-	TriggerOverride(Player4,Global("C0WLHLA1","LOCALS",1))
-	TriggerOverride(Player4,Global("C0WLHLA2","LOCALS",1))
-	TriggerOverride(Player4,Global("C0WLHLA3","LOCALS",1))
-	TriggerOverride(Player4,Global("C0WLHLA4","LOCALS",1))
+	TriggerOverride(Player4,GlobalGT("C0WLSP4","LOCALS",0))
+	!TriggerOverride(Player4,Global("C0WLHLA4","LOCALS",1))
 THEN
   RESPONSE #100
-	ActionOverride(Player4,StartDialogOverride("C0WLHLA",Myself))
+	ActionOverride(Player4,ApplySpellRES("C0WLLS4",Myself))
+	Continue()
 END
 
 IF
@@ -157,15 +291,12 @@ IF
 	!TriggerOverride(Player5,GlobalGT("C0WLSP1","LOCALS",0))
 	!TriggerOverride(Player5,GlobalGT("C0WLSP2","LOCALS",0))
 	!TriggerOverride(Player5,GlobalGT("C0WLSP3","LOCALS",0))
-	!TriggerOverride(Player5,GlobalGT("C0WLSP4","LOCALS",0))
-	OR(4)
-	TriggerOverride(Player5,Global("C0WLHLA1","LOCALS",1))
-	TriggerOverride(Player5,Global("C0WLHLA2","LOCALS",1))
-	TriggerOverride(Player5,Global("C0WLHLA3","LOCALS",1))
-	TriggerOverride(Player5,Global("C0WLHLA4","LOCALS",1))
+	TriggerOverride(Player5,GlobalGT("C0WLSP4","LOCALS",0))
+	!TriggerOverride(Player5,Global("C0WLHLA4","LOCALS",1))
 THEN
   RESPONSE #100
-	ActionOverride(Player5,StartDialogOverride("C0WLHLA",Myself))
+	ActionOverride(Player5,ApplySpellRES("C0WLLS4",Myself))
+	Continue()
 END
 
 IF
@@ -174,15 +305,320 @@ IF
 	!TriggerOverride(Player6,GlobalGT("C0WLSP1","LOCALS",0))
 	!TriggerOverride(Player6,GlobalGT("C0WLSP2","LOCALS",0))
 	!TriggerOverride(Player6,GlobalGT("C0WLSP3","LOCALS",0))
-	!TriggerOverride(Player6,GlobalGT("C0WLSP4","LOCALS",0))
-	OR(4)
+	TriggerOverride(Player6,GlobalGT("C0WLSP4","LOCALS",0))
+	!TriggerOverride(Player6,Global("C0WLHLA4","LOCALS",1))
+THEN
+  RESPONSE #100
+	ActionOverride(Player6,ApplySpellRES("C0WLLS4",Myself))
+	Continue()
+END
+
+/// LEAST INVOCATION
+
+IF
+	TriggerOverride(Player1,ActionListEmpty())
+	Kit(Player1,C0WLOCK)
+	TriggerOverride(Player1,GlobalGT("C0WLSP1","LOCALS",0))
+	TriggerOverride(Player1,Global("C0WLHLA1","LOCALS",1))
+THEN
+  RESPONSE #100
+	ActionOverride(Player1,ApplySpellRES("C0WLH1",Myself))
+	Continue()
+END
+
+IF
+	TriggerOverride(Player2,ActionListEmpty())
+	Kit(Player2,C0WLOCK)
+	TriggerOverride(Player2,GlobalGT("C0WLSP1","LOCALS",0))
+	TriggerOverride(Player2,Global("C0WLHLA1","LOCALS",1))
+THEN
+  RESPONSE #100
+	ActionOverride(Player2,ApplySpellRES("C0WLH1",Myself))
+	Continue()
+END
+
+IF
+	TriggerOverride(Player3,ActionListEmpty())
+	Kit(Player3,C0WLOCK)
+	TriggerOverride(Player3,GlobalGT("C0WLSP1","LOCALS",0))
+	TriggerOverride(Player3,Global("C0WLHLA1","LOCALS",1))
+THEN
+  RESPONSE #100
+	ActionOverride(Player3,ApplySpellRES("C0WLH1",Myself))
+	Continue()
+END
+
+IF
+	TriggerOverride(Player4,ActionListEmpty())
+	Kit(Player4,C0WLOCK)
+	TriggerOverride(Player4,GlobalGT("C0WLSP1","LOCALS",0))
+	TriggerOverride(Player4,Global("C0WLHLA1","LOCALS",1))
+THEN
+  RESPONSE #100
+	ActionOverride(Player4,ApplySpellRES("C0WLH1",Myself))
+	Continue()
+END
+
+IF
+	TriggerOverride(Player5,ActionListEmpty())
+	Kit(Player5,C0WLOCK)
+	TriggerOverride(Player5,GlobalGT("C0WLSP1","LOCALS",0))
+	TriggerOverride(Player5,Global("C0WLHLA1","LOCALS",1))
+THEN
+  RESPONSE #100
+	ActionOverride(Player5,ApplySpellRES("C0WLH1",Myself))
+	Continue()
+END
+
+IF
+	TriggerOverride(Player6,ActionListEmpty())
+	Kit(Player6,C0WLOCK)
+	TriggerOverride(Player6,GlobalGT("C0WLSP1","LOCALS",0))
 	TriggerOverride(Player6,Global("C0WLHLA1","LOCALS",1))
+THEN
+  RESPONSE #100
+	ActionOverride(Player6,ApplySpellRES("C0WLH1",Myself))
+	Continue()
+END
+
+/// LESSER INVOCATION
+
+IF
+	TriggerOverride(Player1,ActionListEmpty())
+	Kit(Player1,C0WLOCK)
+	!TriggerOverride(Player1,GlobalGT("C0WLSP1","LOCALS",0))
+	TriggerOverride(Player1,GlobalGT("C0WLSP2","LOCALS",0))
+	TriggerOverride(Player1,Global("C0WLHLA2","LOCALS",1))
+THEN
+  RESPONSE #100
+	ActionOverride(Player1,ApplySpellRES("C0WLH2",Myself))
+	Continue()
+END
+
+IF
+	TriggerOverride(Player2,ActionListEmpty())
+	Kit(Player2,C0WLOCK)
+	!TriggerOverride(Player2,GlobalGT("C0WLSP1","LOCALS",0))
+	TriggerOverride(Player2,GlobalGT("C0WLSP2","LOCALS",0))
+	TriggerOverride(Player1,Global("C0WLHLA2","LOCALS",1))
+THEN
+  RESPONSE #100
+	ActionOverride(Player2,ApplySpellRES("C0WLH2",Myself))
+	Continue()
+END
+
+IF
+	TriggerOverride(Player3,ActionListEmpty())
+	Kit(Player3,C0WLOCK)
+	!TriggerOverride(Player3,GlobalGT("C0WLSP1","LOCALS",0))
+	TriggerOverride(Player3,GlobalGT("C0WLSP2","LOCALS",0))
+	TriggerOverride(Player3,Global("C0WLHLA2","LOCALS",1))
+THEN
+  RESPONSE #100
+	ActionOverride(Player3,ApplySpellRES("C0WLH2",Myself))
+	Continue()
+END
+
+IF
+	TriggerOverride(Player4,ActionListEmpty())
+	Kit(Player4,C0WLOCK)
+	!TriggerOverride(Player4,GlobalGT("C0WLSP1","LOCALS",0))
+	TriggerOverride(Player4,GlobalGT("C0WLSP2","LOCALS",0))
+	TriggerOverride(Player4,Global("C0WLHLA2","LOCALS",1))
+THEN
+  RESPONSE #100
+	ActionOverride(Player4,ApplySpellRES("C0WLH2",Myself))
+	Continue()
+END
+
+IF
+	TriggerOverride(Player5,ActionListEmpty())
+	Kit(Player5,C0WLOCK)
+	!TriggerOverride(Player5,GlobalGT("C0WLSP1","LOCALS",0))
+	TriggerOverride(Player5,GlobalGT("C0WLSP2","LOCALS",0))
+	TriggerOverride(Player5,Global("C0WLHLA2","LOCALS",1))
+THEN
+  RESPONSE #100
+	ActionOverride(Player5,ApplySpellRES("C0WLH2",Myself))
+	Continue()
+END
+
+IF
+	TriggerOverride(Player6,ActionListEmpty())
+	Kit(Player6,C0WLOCK)
+	!TriggerOverride(Player6,GlobalGT("C0WLSP1","LOCALS",0))
+	TriggerOverride(Player6,GlobalGT("C0WLSP2","LOCALS",0))
 	TriggerOverride(Player6,Global("C0WLHLA2","LOCALS",1))
+THEN
+  RESPONSE #100
+	ActionOverride(Player6,ApplySpellRES("C0WLH2",Myself))
+	Continue()
+END
+
+/// GREATER INVOCATION
+
+IF
+	TriggerOverride(Player1,ActionListEmpty())
+	Kit(Player1,C0WLOCK)
+	!TriggerOverride(Player1,GlobalGT("C0WLSP1","LOCALS",0))
+	!TriggerOverride(Player1,GlobalGT("C0WLSP2","LOCALS",0))
+	TriggerOverride(Player1,GlobalGT("C0WLSP3","LOCALS",0))
+	TriggerOverride(Player1,Global("C0WLHLA3","LOCALS",1))
+THEN
+  RESPONSE #100
+	ActionOverride(Player1,ApplySpellRES("C0WLH3",Myself))
+	Continue()
+END
+
+IF
+	TriggerOverride(Player2,ActionListEmpty())
+	Kit(Player2,C0WLOCK)
+	!TriggerOverride(Player2,GlobalGT("C0WLSP1","LOCALS",0))
+	!TriggerOverride(Player2,GlobalGT("C0WLSP2","LOCALS",0))
+	TriggerOverride(Player2,GlobalGT("C0WLSP3","LOCALS",0))
+	TriggerOverride(Player2,Global("C0WLHLA3","LOCALS",1))
+THEN
+  RESPONSE #100
+	ActionOverride(Player2,ApplySpellRES("C0WLH3",Myself))
+	Continue()
+END
+
+IF
+	TriggerOverride(Player3,ActionListEmpty())
+	Kit(Player3,C0WLOCK)
+	!TriggerOverride(Player3,GlobalGT("C0WLSP1","LOCALS",0))
+	!TriggerOverride(Player3,GlobalGT("C0WLSP2","LOCALS",0))
+	TriggerOverride(Player3,GlobalGT("C0WLSP3","LOCALS",0))
+	TriggerOverride(Player3,Global("C0WLHLA3","LOCALS",1))
+THEN
+  RESPONSE #100
+	ActionOverride(Player3,ApplySpellRES("C0WLH3",Myself))
+	Continue()
+END
+
+IF
+	TriggerOverride(Player4,ActionListEmpty())
+	Kit(Player4,C0WLOCK)
+	!TriggerOverride(Player4,GlobalGT("C0WLSP1","LOCALS",0))
+	!TriggerOverride(Player4,GlobalGT("C0WLSP2","LOCALS",0))
+	TriggerOverride(Player4,GlobalGT("C0WLSP3","LOCALS",0))
+	TriggerOverride(Player4,Global("C0WLHLA3","LOCALS",1))
+THEN
+  RESPONSE #100
+	ActionOverride(Player4,ApplySpellRES("C0WLH3",Myself))
+	Continue()
+END
+
+IF
+	TriggerOverride(Player5,ActionListEmpty())
+	Kit(Player5,C0WLOCK)
+	!TriggerOverride(Player5,GlobalGT("C0WLSP1","LOCALS",0))
+	!TriggerOverride(Player5,GlobalGT("C0WLSP2","LOCALS",0))
+	TriggerOverride(Player5,GlobalGT("C0WLSP3","LOCALS",0))
+	TriggerOverride(Player5,Global("C0WLHLA3","LOCALS",1))
+THEN
+  RESPONSE #100
+	ActionOverride(Player5,ApplySpellRES("C0WLH3",Myself))
+	Continue()
+END
+
+IF
+	TriggerOverride(Player6,ActionListEmpty())
+	Kit(Player6,C0WLOCK)
+	!TriggerOverride(Player6,GlobalGT("C0WLSP1","LOCALS",0))
+	!TriggerOverride(Player6,GlobalGT("C0WLSP2","LOCALS",0))
+	TriggerOverride(Player6,GlobalGT("C0WLSP3","LOCALS",0))
 	TriggerOverride(Player6,Global("C0WLHLA3","LOCALS",1))
+THEN
+  RESPONSE #100
+	ActionOverride(Player6,ApplySpellRES("C0WLH3",Myself))
+	Continue()
+END
+
+/// DARK INVOCATION
+
+IF
+	TriggerOverride(Player1,ActionListEmpty())
+	Kit(Player1,C0WLOCK)
+	!TriggerOverride(Player1,GlobalGT("C0WLSP1","LOCALS",0))
+	!TriggerOverride(Player1,GlobalGT("C0WLSP2","LOCALS",0))
+	!TriggerOverride(Player1,GlobalGT("C0WLSP3","LOCALS",0))
+	TriggerOverride(Player1,GlobalGT("C0WLSP4","LOCALS",0))
+	TriggerOverride(Player1,Global("C0WLHLA4","LOCALS",1))
+THEN
+  RESPONSE #100
+	ActionOverride(Player1,ApplySpellRES("C0WLH4",Myself))
+	Continue()
+END
+
+IF
+	TriggerOverride(Player2,ActionListEmpty())
+	Kit(Player2,C0WLOCK)
+	!TriggerOverride(Player2,GlobalGT("C0WLSP1","LOCALS",0))
+	!TriggerOverride(Player2,GlobalGT("C0WLSP2","LOCALS",0))
+	!TriggerOverride(Player2,GlobalGT("C0WLSP3","LOCALS",0))
+	TriggerOverride(Player2,GlobalGT("C0WLSP4","LOCALS",0))
+	TriggerOverride(Player2,Global("C0WLHLA4","LOCALS",1))
+THEN
+  RESPONSE #100
+	ActionOverride(Player2,ApplySpellRES("C0WLH4",Myself))
+	Continue()
+END
+
+IF
+	TriggerOverride(Player3,ActionListEmpty())
+	Kit(Player3,C0WLOCK)
+	!TriggerOverride(Player3,GlobalGT("C0WLSP1","LOCALS",0))
+	!TriggerOverride(Player3,GlobalGT("C0WLSP2","LOCALS",0))
+	!TriggerOverride(Player3,GlobalGT("C0WLSP3","LOCALS",0))
+	TriggerOverride(Player3,GlobalGT("C0WLSP4","LOCALS",0))
+	TriggerOverride(Player3,Global("C0WLHLA4","LOCALS",1))
+THEN
+  RESPONSE #100
+	ActionOverride(Player3,ApplySpellRES("C0WLH4",Myself))
+	Continue()
+END
+
+IF
+	TriggerOverride(Player4,ActionListEmpty())
+	Kit(Player4,C0WLOCK)
+	!TriggerOverride(Player4,GlobalGT("C0WLSP1","LOCALS",0))
+	!TriggerOverride(Player4,GlobalGT("C0WLSP2","LOCALS",0))
+	!TriggerOverride(Player4,GlobalGT("C0WLSP3","LOCALS",0))
+	TriggerOverride(Player4,GlobalGT("C0WLSP4","LOCALS",0))
+	TriggerOverride(Player4,Global("C0WLHLA4","LOCALS",1))
+THEN
+  RESPONSE #100
+	ActionOverride(Player4,ApplySpellRES("C0WLH4",Myself))
+	Continue()
+END
+
+IF
+	TriggerOverride(Player5,ActionListEmpty())
+	Kit(Player5,C0WLOCK)
+	!TriggerOverride(Player5,GlobalGT("C0WLSP1","LOCALS",0))
+	!TriggerOverride(Player5,GlobalGT("C0WLSP2","LOCALS",0))
+	!TriggerOverride(Player5,GlobalGT("C0WLSP3","LOCALS",0))
+	TriggerOverride(Player5,GlobalGT("C0WLSP4","LOCALS",0))
+	TriggerOverride(Player5,Global("C0WLHLA4","LOCALS",1))
+THEN
+  RESPONSE #100
+	ActionOverride(Player5,ApplySpellRES("C0WLH4",Myself))
+	Continue()
+END
+
+IF
+	TriggerOverride(Player6,ActionListEmpty())
+	Kit(Player6,C0WLOCK)
+	!TriggerOverride(Player6,GlobalGT("C0WLSP1","LOCALS",0))
+	!TriggerOverride(Player6,GlobalGT("C0WLSP2","LOCALS",0))
+	!TriggerOverride(Player6,GlobalGT("C0WLSP3","LOCALS",0))
+	TriggerOverride(Player6,GlobalGT("C0WLSP4","LOCALS",0))
 	TriggerOverride(Player6,Global("C0WLHLA4","LOCALS",1))
 THEN
   RESPONSE #100
-	ActionOverride(Player6,StartDialogOverride("C0WLHLA",Myself))
+	ActionOverride(Player6,ApplySpellRES("C0WLH4",Myself))
+	Continue()
 END
 
 IF
@@ -192,10 +628,6 @@ IF
 	!TriggerOverride(Player1,GlobalGT("C0WLSP2","LOCALS",0))
 	!TriggerOverride(Player1,GlobalGT("C0WLSP3","LOCALS",0))
 	!TriggerOverride(Player1,GlobalGT("C0WLSP4","LOCALS",0))
-	!TriggerOverride(Player1,Global("C0WLHLA1","LOCALS",1))
-	!TriggerOverride(Player1,Global("C0WLHLA2","LOCALS",1))
-	!TriggerOverride(Player1,Global("C0WLHLA3","LOCALS",1))
-	!TriggerOverride(Player1,Global("C0WLHLA4","LOCALS",1))
 	TriggerOverride(Player1,Global("C0WLSWAP","LOCALS",1))
 THEN
   RESPONSE #100
@@ -209,10 +641,6 @@ IF
 	!TriggerOverride(Player2,GlobalGT("C0WLSP2","LOCALS",0))
 	!TriggerOverride(Player2,GlobalGT("C0WLSP3","LOCALS",0))
 	!TriggerOverride(Player2,GlobalGT("C0WLSP4","LOCALS",0))
-	!TriggerOverride(Player2,Global("C0WLHLA1","LOCALS",1))
-	!TriggerOverride(Player2,Global("C0WLHLA2","LOCALS",1))
-	!TriggerOverride(Player2,Global("C0WLHLA3","LOCALS",1))
-	!TriggerOverride(Player2,Global("C0WLHLA4","LOCALS",1))
 	TriggerOverride(Player2,Global("C0WLSWAP","LOCALS",1))
 THEN
   RESPONSE #100
@@ -226,10 +654,6 @@ IF
 	!TriggerOverride(Player3,GlobalGT("C0WLSP2","LOCALS",0))
 	!TriggerOverride(Player3,GlobalGT("C0WLSP3","LOCALS",0))
 	!TriggerOverride(Player3,GlobalGT("C0WLSP4","LOCALS",0))
-	!TriggerOverride(Player3,Global("C0WLHLA1","LOCALS",1))
-	!TriggerOverride(Player3,Global("C0WLHLA2","LOCALS",1))
-	!TriggerOverride(Player3,Global("C0WLHLA3","LOCALS",1))
-	!TriggerOverride(Player3,Global("C0WLHLA4","LOCALS",1))
 	TriggerOverride(Player3,Global("C0WLSWAP","LOCALS",1))
 THEN
   RESPONSE #100
@@ -243,10 +667,6 @@ IF
 	!TriggerOverride(Player4,GlobalGT("C0WLSP2","LOCALS",0))
 	!TriggerOverride(Player4,GlobalGT("C0WLSP3","LOCALS",0))
 	!TriggerOverride(Player4,GlobalGT("C0WLSP4","LOCALS",0))
-	!TriggerOverride(Player4,Global("C0WLHLA1","LOCALS",1))
-	!TriggerOverride(Player4,Global("C0WLHLA2","LOCALS",1))
-	!TriggerOverride(Player4,Global("C0WLHLA3","LOCALS",1))
-	!TriggerOverride(Player4,Global("C0WLHLA4","LOCALS",1))
 	TriggerOverride(Player4,Global("C0WLSWAP","LOCALS",1))
 THEN
   RESPONSE #100
@@ -260,10 +680,6 @@ IF
 	!TriggerOverride(Player5,GlobalGT("C0WLSP2","LOCALS",0))
 	!TriggerOverride(Player5,GlobalGT("C0WLSP3","LOCALS",0))
 	!TriggerOverride(Player5,GlobalGT("C0WLSP4","LOCALS",0))
-	!TriggerOverride(Player5,Global("C0WLHLA1","LOCALS",1))
-	!TriggerOverride(Player5,Global("C0WLHLA2","LOCALS",1))
-	!TriggerOverride(Player5,Global("C0WLHLA3","LOCALS",1))
-	!TriggerOverride(Player5,Global("C0WLHLA4","LOCALS",1))
 	TriggerOverride(Player5,Global("C0WLSWAP","LOCALS",1))
 THEN
   RESPONSE #100
@@ -277,10 +693,6 @@ IF
 	!TriggerOverride(Player6,GlobalGT("C0WLSP2","LOCALS",0))
 	!TriggerOverride(Player6,GlobalGT("C0WLSP3","LOCALS",0))
 	!TriggerOverride(Player6,GlobalGT("C0WLSP4","LOCALS",0))
-	!TriggerOverride(Player6,Global("C0WLHLA1","LOCALS",1))
-	!TriggerOverride(Player6,Global("C0WLHLA2","LOCALS",1))
-	!TriggerOverride(Player6,Global("C0WLHLA3","LOCALS",1))
-	!TriggerOverride(Player6,Global("C0WLHLA4","LOCALS",1))
 	TriggerOverride(Player6,Global("C0WLSWAP","LOCALS",1))
 THEN
   RESPONSE #100

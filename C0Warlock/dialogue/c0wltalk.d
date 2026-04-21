@@ -863,7 +863,7 @@ Casting Time: 6
 Area of Effect: 15 ft. radius
 Saving Throw: None
 
-You conjure a curtain of fire that deals 2d6 points of damage to any creature that attempts to pass through it. Half the wall's fire damage results from supernatural power and deals magical damage, therefore not being subject to being reduced by resistance to fire. The curtain of flame lasts for 3 rounds before dissipating. */
+You conjure a curtain of fire that deals 2d6 points of damage to any creature that attempts to pass through it. Half the wall's fire damage results from supernatural power and deals magical fire damage, therefore not being subject to being reduced by resistance to normal fire. The curtain of flame lasts for 3 rounds before dissipating. */
 ++ @48 /* Learn spell. */ DO ~IncrementGlobal("C0WLSP3","LOCALS",-1) AddSpecialAbility("c0wl308") AddSpecialAbility("C0W^308")~ + NEXT
 ++ @49 /* Return to spell selection. */ + learn
 END
