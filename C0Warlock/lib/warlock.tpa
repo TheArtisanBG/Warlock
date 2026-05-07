@@ -32,6 +32,7 @@ LAF ADD_IDS_ENTRY INT_VAR preferredValue = 132 STR_VAR idsFile = "splstate.ids" 
 END
 
 ACTION_DEFINE_ASSOCIATIVE_ARRAY warlock_anims_Exxx BEGIN
+    ~pit_fiend~ => ~C0_Pit_Fiend~
     ~horned_devil~ => ~C0_Horned_Devil~
   END
   ACTION_PHP_EACH warlock_anims_Exxx AS warlock_folder => symbol BEGIN
@@ -798,11 +799,46 @@ WRITE_ASCII 0x248 ~c0wlglas~ #8  // override
 WRITE_ASCII 0x280 ~c0wlglas~ #32 // death variable
 
 COPY_EXISTING ~dempitsu.cre~ ~override/c0wlpits.cre~
+    WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~C0_PIT_FIEND~))
 WRITE_BYTE 0x24 160
 WRITE_BYTE 0x26 160
 WRITE_BYTE 0x52 0
 WRITE_ASCII 0x248 ~c0wlpits~ #8  // override
 WRITE_ASCII 0x280 ~c0wlpits~ #32 // death variable
+    ADD_KNOWN_SPELL ~SPWI104~ #0 ~WIZARD~
+    ADD_MEMORIZED_SPELL ~SPWI104~ #0 ~WIZARD~ (1)
+    ADD_KNOWN_SPELL ~SPWI106~ #0 ~WIZARD~
+    ADD_MEMORIZED_SPELL ~SPWI106~ #0 ~WIZARD~ (1)
+    ADD_KNOWN_SPELL ~SPWI205~ #1 ~WIZARD~
+    ADD_MEMORIZED_SPELL ~SPWI205~ #1 ~WIZARD~ (1)
+    ADD_KNOWN_SPELL ~SPWI217~ #1 ~WIZARD~
+    ADD_MEMORIZED_SPELL ~SPWI217~ #1 ~WIZARD~ (1)
+    ADD_KNOWN_SPELL ~SPWI314~ #2 ~WIZARD~
+    ADD_MEMORIZED_SPELL ~SPWI314~ #2 ~WIZARD~ (1)
+    ADD_KNOWN_SPELL ~SPWI316~ #2 ~WIZARD~
+    ADD_MEMORIZED_SPELL ~SPWI316~ #2 ~WIZARD~ (1)
+    ADD_KNOWN_SPELL ~SPWI404~ #3 ~WIZARD~
+    ADD_MEMORIZED_SPELL ~SPWI404~ #3 ~WIZARD~ (1)
+    ADD_KNOWN_SPELL ~SPWI412~ #3 ~WIZARD~
+    ADD_MEMORIZED_SPELL ~SPWI412~ #3 ~WIZARD~ (1)
+    ADD_KNOWN_SPELL ~SPWI413~ #3 ~WIZARD~
+    ADD_MEMORIZED_SPELL ~SPWI413~ #3 ~WIZARD~ (1)
+    ADD_KNOWN_SPELL ~SPWI501~ #4 ~WIZARD~
+    ADD_MEMORIZED_SPELL ~SPWI501~ #4 ~WIZARD~ (1)
+    ADD_KNOWN_SPELL ~SPWI507~ #4 ~WIZARD~
+    ADD_MEMORIZED_SPELL ~SPWI507~ #4 ~WIZARD~ (1)
+    ADD_KNOWN_SPELL ~SPWI614~ #5 ~WIZARD~
+    ADD_MEMORIZED_SPELL ~SPWI614~ #5 ~WIZARD~ (1)
+    ADD_KNOWN_SPELL ~SPWI616~ #5 ~WIZARD~
+    ADD_MEMORIZED_SPELL ~SPWI616~ #5 ~WIZARD~ (1)
+    ADD_KNOWN_SPELL ~SPWI715~ #6 ~WIZARD~
+    ADD_MEMORIZED_SPELL ~SPWI715~ #6 ~WIZARD~ (1)
+    ADD_KNOWN_SPELL ~SPWI712~ #6 ~WIZARD~
+    ADD_MEMORIZED_SPELL ~SPWI712~ #6 ~WIZARD~ (1)
+    ADD_KNOWN_SPELL ~SPWI811~ #7 ~WIZARD~
+    ADD_MEMORIZED_SPELL ~SPWI811~ #7 ~WIZARD~ (1)
+    ADD_KNOWN_SPELL ~SPWI816~ #7 ~WIZARD~
+    ADD_MEMORIZED_SPELL ~SPWI816~ #7 ~WIZARD~ (1)
 
 ////////////////////////////////////////
 /////////DIALOGUE///////////////////////
@@ -1399,13 +1435,15 @@ COPY_EXISTING ~C0WL%blasts%R.spl~ OVERRIDE // BLAST
   LPF ALTER_EFFECT INT_VAR silent = 1 match_opcode = 146 resist_dispel = 1 STR_VAR match_resource = EVAL ~C0WL%blasts%_~ END
 COPY_EXISTING ~C0WL%blasts%R.spl~ ~OVERRIDE/C0WL%blasts%G.spl~ // BLAST
   LPF ALTER_SPELL_HEADER INT_VAR projectile = c0wlp000 END
+
 COPY_EXISTING ~C0WL106a.spl~ ~override/c0wl%blasts%A.spl~
-	LPF	ALTER_EFFECT	INT_VAR	match_opcode = 171	STR_VAR match_resource = EVAL ~C0WL106B~ resource = EVAL ~C0WL%blasts%B~ END
-	LPF	ALTER_EFFECT	INT_VAR	match_opcode = 171	STR_VAR match_resource = EVAL ~C0WL106C~ resource = EVAL ~C0WL%blasts%C~ END
-	LPF	ALTER_EFFECT	INT_VAR	match_opcode = 171	STR_VAR match_resource = EVAL ~C0WL106I~ resource = EVAL ~C0WL%blasts%I~ END
-	LPF	ALTER_EFFECT	INT_VAR	match_opcode = 171	STR_VAR match_resource = EVAL ~C0WL106D~ resource = EVAL ~C0WL%blasts%D~ END
-	LPF	ALTER_EFFECT	INT_VAR	match_opcode = 171	STR_VAR match_resource = EVAL ~C0WL106E~ resource = EVAL ~C0WL%blasts%E~ END
-	LPF	ALTER_EFFECT	INT_VAR	match_opcode = 171	STR_VAR match_resource = EVAL ~C0WL106F~ resource = EVAL ~C0WL%blasts%F~ END
+	LPF	ALTER_EFFECT	INT_VAR	match_opcode = 171	STR_VAR match_resource = C0WL106B resource = EVAL ~C0WL%blasts%B~ END
+	LPF	ALTER_EFFECT	INT_VAR	match_opcode = 171	STR_VAR match_resource = C0WL106C resource = EVAL ~C0WL%blasts%C~ END
+	LPF	ALTER_EFFECT	INT_VAR	match_opcode = 171	STR_VAR match_resource = C0WL106I resource = EVAL ~C0WL%blasts%I~ END
+	LPF	ALTER_EFFECT	INT_VAR	match_opcode = 171	STR_VAR match_resource = C0WL106D resource = EVAL ~C0WL%blasts%D~ END
+	LPF	ALTER_EFFECT	INT_VAR	match_opcode = 171	STR_VAR match_resource = C0WL106E resource = EVAL ~C0WL%blasts%E~ END
+	LPF	ALTER_EFFECT	INT_VAR	match_opcode = 171	STR_VAR match_resource = C0WL106F resource = EVAL ~C0WL%blasts%F~ END
+
 COPY_EXISTING ~C0WL%blasts%B.spl~ ~override~ // HIDEOUS BLOW
 WRITE_ASCIIE 0x3a ~C0W!%blasts%C~
   LPF ALTER_SPELL_HEADER STR_VAR icon = EVAL ~C0W!%blasts%B~ END
@@ -1558,7 +1596,7 @@ WRITE_ASCII 0x8 ~C0WL506Y~
 
 // SPELLS
 
-ACTION_IF (FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~) BEGIN
+ACTION_IF (MOD_IS_INSTALLED ~EEEX/EEEX.TP2~ ~0~) THEN BEGIN
 
 COPY_EXISTING ~c0wl000.spl~ ~override~
     LPF ADD_SPELL_EFFECT INT_VAR opcode = 401 target = 1 timing = 9 special = IDS_OF_SYMBOL (~STATS~ ~WARLOCK_L12_DECEIVE_ITEM~) parameter1 = 1 parameter2 = 1 END
@@ -6472,7 +6510,7 @@ END
 	END
 	END
 
-ACTION_IF FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ THEN BEGIN
+ACTION_IF (MOD_IS_INSTALLED ~EEEX/EEEX.TP2~ ~0~) THEN BEGIN
 
 OUTER_SET warlock_idsno = IDS_OF_SYMBOL (~kit~ ~C0WLOCK~)
   

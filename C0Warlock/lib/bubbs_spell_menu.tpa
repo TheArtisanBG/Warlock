@@ -146,12 +146,14 @@ COPY ~%MOD_FOLDER%/2da/bubb/C0WL106.2da~ ~override/C0WL%blast%f.2da~
 
 COPY ~%MOD_FOLDER%/spells/bubb/C0WL100.spl~ ~override/C0WL%blast%A.spl~
 LPF ALTER_SPELL_HEADER STR_VAR icon = EVAL ~C0WL%blast%B~ END
-LPF ALTER_EFFECT STR_VAR match_resource = C0WL106B resource = EVAL ~C0WL%blast%B~ END
-LPF ALTER_EFFECT STR_VAR match_resource = C0WL106C resource = EVAL ~C0WL%blast%C~ END
-LPF ALTER_EFFECT STR_VAR match_resource = C0WL106I resource = EVAL ~C0WL%blast%I~ END
-LPF ALTER_EFFECT STR_VAR match_resource = C0WL106D resource = EVAL ~C0WL%blast%D~ END
-LPF ALTER_EFFECT STR_VAR match_resource = C0WL106E resource = EVAL ~C0WL%blast%E~ END
-LPF ALTER_EFFECT STR_VAR match_resource = C0WL106F resource = EVAL ~C0WL%blast%F~ END
+  LPF ALTER_EFFECT STR_VAR match_resource = C0WL106B resource = EVAL ~C0WL%blast%B~ END
+  LPF ALTER_EFFECT STR_VAR match_resource = C0WL106C resource = EVAL ~C0WL%blast%C~ END
+  LPF ALTER_EFFECT STR_VAR match_resource = C0WL106D resource = EVAL ~C0WL%blast%D~ END
+  LPF ALTER_EFFECT STR_VAR match_resource = C0WL106I resource = EVAL ~C0WL%blast%I~ END
+  LPF ALTER_EFFECT STR_VAR match_resource = C0WL106E resource = EVAL ~C0WL%blast%E~ END
+  LPF ALTER_EFFECT STR_VAR match_resource = C0WL106F resource = EVAL ~C0WL%blast%F~ END
+  LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 2 timing = 1 STR_VAR resource = C0WL_00 END
+
 END
 
 COPY_EXISTING ~C0WL106.spl~ ~override~
@@ -208,14 +210,17 @@ LPF ADD_SPELL_CFEFFECT INT_VAR opcode = 171 target = 1 timing = 1 STR_VAR resour
 LPF ADD_SPELL_CFEFFECT INT_VAR opcode = 172 target = 1 timing = 1 STR_VAR resource = EVAL ~C0WL%blasts_level%~ END
 COPY_EXISTING ~C0WL%blasts_level%b.spl~ ~override~
 WRITE_BYTE 0x1C 3
+LPF ALTER_SPELL_HEADER INT_VAR location = 0 END
 LPF ADD_SPELL_CFEFFECT INT_VAR opcode = 171 target = 1 timing = 1 STR_VAR resource = EVAL ~%SOURCE_RES%~ END
 LPF ADD_SPELL_CFEFFECT INT_VAR opcode = 172 target = 1 timing = 1 STR_VAR resource = EVAL ~%SOURCE_RES%~ END
 COPY_EXISTING ~C0WL%blasts_level%c.spl~ ~override~
 WRITE_BYTE 0x1C 3
+LPF ALTER_SPELL_HEADER INT_VAR location = 0 END
 LPF ADD_SPELL_CFEFFECT INT_VAR opcode = 171 target = 1 timing = 1 STR_VAR resource = EVAL ~%SOURCE_RES%~ END
 LPF ADD_SPELL_CFEFFECT INT_VAR opcode = 172 target = 1 timing = 1 STR_VAR resource = EVAL ~%SOURCE_RES%~ END
 COPY_EXISTING ~C0WL%blasts_level%d.spl~ ~override~
 WRITE_BYTE 0x1C 3
+LPF ALTER_SPELL_HEADER INT_VAR location = 0 END
 LPF ADD_SPELL_CFEFFECT INT_VAR opcode = 171 target = 1 timing = 1 STR_VAR resource = EVAL ~%SOURCE_RES%~ END
 LPF ADD_SPELL_CFEFFECT INT_VAR opcode = 172 target = 1 timing = 1 STR_VAR resource = EVAL ~%SOURCE_RES%~ END
 COPY_EXISTING ~C0WL%blasts_level%e.spl~ ~override~
@@ -228,6 +233,7 @@ LPF ADD_SPELL_CFEFFECT INT_VAR opcode = 171 target = 1 timing = 1 STR_VAR resour
 LPF ADD_SPELL_CFEFFECT INT_VAR opcode = 172 target = 1 timing = 1 STR_VAR resource = EVAL ~%SOURCE_RES%~ END
 COPY_EXISTING ~C0WL%blasts_level%i.spl~ ~override~
 WRITE_BYTE 0x1C 3
+LPF ALTER_SPELL_HEADER INT_VAR location = 0 END
 LPF ADD_SPELL_CFEFFECT INT_VAR opcode = 171 target = 1 timing = 1 STR_VAR resource = EVAL ~%SOURCE_RES%~ END
 LPF ADD_SPELL_CFEFFECT INT_VAR opcode = 172 target = 1 timing = 1 STR_VAR resource = EVAL ~%SOURCE_RES%~ END
 
@@ -379,4 +385,90 @@ COPY_EXISTING_REGEXP ~C0WL%warlock_spells%.*.spl~ ~override~
 	LPF ALTER_EFFECT INT_VAR match_opcode = 324 silent = 1 STR_VAR match_resource = EVAL ~C0WL%warlock_spells%~ resource = EVAL ~C0W_%warlock_spells%~ END
       BUT_ONLY	
 	END
-	  
+
+INCLUDE ~%MOD_FOLDER%/lib/bubbs_spell_menu_invocations.tpa~
+
+COPY_EXISTING ~M_B3Spel.lua~ ~override~
+LPF REPLACE_MULTILINE
+    INT_VAR
+    strict = 1
+    verbose = 0
+    STR_VAR
+    pattern = ~~~~~-- Update internal castable count~~~~~
+    string = EVAL ~~~~~%infinite_spells_2%
+	
+	-- Update internal castable count~~~~~ //"
+  END
+LPF REPLACE_MULTILINE
+    INT_VAR
+    strict = 1
+    verbose = 0
+    STR_VAR
+    pattern = ~~~~~	-- Update displayed castable count
+	local iconData = resrefData.iconData
+	if iconData ~= nil ~~~~~
+    string = EVAL ~~~~~	-- Update displayed castable count
+	local iconData = resrefData.iconData
+	if iconData ~= nil 
+	and C0_Invocations_2 ~~~~~ //"
+  END
+COPY_EXISTING ~B3SpelEx.lua~ ~override~
+LPF REPLACE_MULTILINE
+    INT_VAR
+    strict = 1
+    verbose = 0
+    STR_VAR
+    pattern = ~~~~~local spellData = {~~~~~
+    string = EVAL ~~~~~%infinite_spells%
+	
+	local spellData = {~~~~~ //"
+  END
+LPF REPLACE_MULTILINE
+    INT_VAR
+    strict = 1
+    verbose = 0
+    STR_VAR
+    pattern = ~~~~~["spellCastableCount"]  =~~~~~
+    string = EVAL ~~~~~["spellCastableCount"]  = C0_Invocations and~~~~~ //"
+  END
+
+
+COPY ~%MOD_FOLDER%/spells/eeex~ ~override~
+SAY NAME1 #-1
+
+COPY_EXISTING ~C0CLABWL.2DA~ OVERRIDE
+  // Borrowed from Rogue Rebalancing
+  LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 20 STR_VAR f_Entry = AP_C0WL_00 END
+  LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 20 STR_VAR f_Entry = "GA_C0W&102" END
+  LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 20 STR_VAR f_Entry = "GA_C0W&103" END
+  LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 20 STR_VAR f_Entry = "GA_C0W&200" END
+  LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 20 STR_VAR f_Entry = "GA_C0W&500" END
+  PRETTY_PRINT_2DA
+
+COPY_EXISTING ~C0WL102.SPL~ ~OVERRIDE/C0W&102.SPL~
+LPF ALTER_SPELL_HEADER INT_VAR location = 0 END
+
+COPY_EXISTING ~C0WL102.SPL~ ~OVERRIDE~
+LPF ALTER_SPELL_HEADER INT_VAR target = 7 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 target = 2 timing = 1 STR_VAR resource = C0WL1020 END
+
+COPY_EXISTING ~C0WL103.SPL~ ~OVERRIDE/C0W&103.SPL~
+LPF ALTER_SPELL_HEADER INT_VAR location = 0 END
+
+COPY_EXISTING ~C0WL103.SPL~ ~OVERRIDE~
+LPF ALTER_SPELL_HEADER INT_VAR target = 7 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 target = 2 timing = 1 STR_VAR resource = C0WL1030 END
+
+COPY_EXISTING ~C0WL200.SPL~ ~OVERRIDE/C0W&200.SPL~
+LPF ALTER_SPELL_HEADER INT_VAR location = 0 END
+
+COPY_EXISTING ~C0WL200.SPL~ ~OVERRIDE~
+LPF ALTER_SPELL_HEADER INT_VAR target = 7 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 target = 2 timing = 1 STR_VAR resource = C0WL2000 END
+
+COPY_EXISTING ~C0WL500.SPL~ ~OVERRIDE/C0W&500.SPL~
+LPF ALTER_SPELL_HEADER INT_VAR location = 0 END
+
+COPY_EXISTING ~C0WL500.SPL~ ~OVERRIDE~
+LPF ALTER_SPELL_HEADER INT_VAR target = 7 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 target = 2 timing = 1 STR_VAR resource = C0WL5000 END
