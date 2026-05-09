@@ -6436,9 +6436,9 @@ This ability allows the warlock to call upon a powerful pit fiend from the Lower
 COPY_EXISTING ~c0wl514.spl~ ~override~
 SAY NAME1 ~Infernal Bargain~
 SAY UNIDENTIFIED_DESC ~INFERNAL BARGAIN
-With this ability, the warlock contacts the Lower Planes to make a Pact Insidious with one of its most powerful denizens. A falxugon is summoned as an intermediary, with whom the summoner may negotiate the terms of the contract. As expected from dealing with fiends, the negotiation is a dangerous affair, and the falxugon will attempt to twist the warlock's words to make the bargain as unfavorable for them as possible. The wiser the warlock, the more likely they will be to outwit the fiend and make the terms as favorable to them as possible.
+With this ability, the warlock contacts the Lower Planes to make a Pact Insidious with one of its most powerful denizens. A falxugon is summoned as an intermediary, with whom the summoner may negotiate the terms of the contract. As expected from dealing with fiends, the negotiation is a dangerous affair, and the falxugon will attempt to twist the warlock's words to make the bargain as unfavorable for them as possible. The wiser the warlock, the more likely they will be to outwit the fiend and alter the contract to favor them.
 
-Once the contract is made, the warlock must then sign the contract with blood and sacrifice a portion of their maximum hit points to fulfill their terms of the bargain, which takes a full day to recover. The higher the warlock's charisma, the lower the amount of hit points lost.
+Once the contract is made, the warlock must then sign with blood and sacrifice a portion of their maximum hit points to fulfill their terms of the bargain, which takes a full day to recover. The higher the warlock's charisma, the lower the amount of hit points lost.
 
 This ability may be selected up to three times.
 
@@ -6461,15 +6461,15 @@ LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (~Lost 
 
 COPY_EXISTING ~c0wl514a.spl~ ~override/c0wl514b.spl~
 LPF ALTER_EFFECT INT_VAR match_opcode = 18 parameter1 = (0 - 15) END
-LPF ALTER_EFFECT INT_VAR match_opcode = 8 parameter1 = 15 END
+LPF ALTER_EFFECT INT_VAR match_opcode = 12 parameter1 = 15 END
 LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (~Lost fifteen maximum hit points~) END
 COPY_EXISTING ~c0wl514a.spl~ ~override/c0wl514c.spl~
 LPF ALTER_EFFECT INT_VAR match_opcode = 18 parameter1 = (0 - 10) END
-LPF ALTER_EFFECT INT_VAR match_opcode = 8 parameter1 = 10 END
+LPF ALTER_EFFECT INT_VAR match_opcode = 12 parameter1 = 10 END
 LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (~Lost ten maximum hit points~) END
 COPY_EXISTING ~c0wl514a.spl~ ~override/c0wl514d.spl~
 LPF ALTER_EFFECT INT_VAR match_opcode = 18 parameter1 = (0 - 5) END
-LPF ALTER_EFFECT INT_VAR match_opcode = 8 parameter1 = 5 END
+LPF ALTER_EFFECT INT_VAR match_opcode = 12 parameter1 = 5 END
 LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (~Lost five maximum hit points~) END
 
 ACTION_IF (MOD_IS_INSTALLED ~EEEX/EEEX.TP2~ ~0~) THEN BEGIN

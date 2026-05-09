@@ -43,7 +43,7 @@ END
 IF ~True()~ + wish5.2
 
 CHAIN C0WL514 wish4
-~Fortunately, you are quick to catch on. Before long, you begin tricking the fiend's phrasings yourself, taking some joy in watching it grit its teeth and suppress its urge to scream at you. You still doubt you'll get what you want, but chances are the fiend won't be able to trick you.~
+~Fortunately, you are quick to catch on. Before long, you begin tricking the fiend's phrasings yourself, taking some joy in seeing its gritted teeth and near outbursts of frustration. You still doubt you'll get what you want, but chances are the fiend won't be able to trick you.~
 END
 IF ~True()~ + wish5.2
 
@@ -58,5 +58,5 @@ IF ~CheckStatGT(LastTalkedToBy,22,CHR)
 IF ~CheckStatGT(LastTalkedToBy,24,CHR)~ DO ~ApplySpellRES("C0WL514D",LasttalkedtoBy(Myself))~ + wish6
 
 CHAIN C0WL514 wish6
-~After you sign, the fiend smiles coldly at you. "A pleasure doing business with you. You shall receive your expected boon upon my master being apprised of the contract's terms.~
+~After you sign, the fiend smiles coldly. "A pleasure doing business with you. You shall receive your expected boon upon my master being apprised of the contract's terms.~
 COPY_TRANS wish25 12
