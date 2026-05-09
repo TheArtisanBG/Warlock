@@ -19,7 +19,7 @@ END
     ++ ~No, I have changed my mind. Return to whence you came.~ + wish.3
 
 CHAIN C0WL514 wish.1
-    ~The falxugon nods, raising his pen and parchment as you begin negotiating a complex contract. As expected, the fiend misses no opportunity to twist your words against you as much as possible to make the terms as unfavorable to you as possible...~
+    ~The falxugon nods, raising his pen and parchment as you begin negotiating a complex contract. As expected, the fiend misses no opportunity to twist your words against you and make the terms as unfavorable to you as possible...~
 END
 IF ~CheckStatLT(LastTalkedToBy,10,WIS)~ DO ~SetupWish(4,4)~ + wish1
 IF ~CheckStatGT(LastTalkedToBy,9,WIS)
@@ -29,13 +29,13 @@ IF ~CheckStatGT(LastTalkedToBy,14,WIS)
 IF ~CheckStatGT(LastTalkedToBy,17,WIS)~ DO ~SetupWish(4,1)~ + wish4
 
 CHAIN C0WL514 wish.2 
-    ~The fiend chuckles. "We who deal with bargains are accustomed to dealing even in such situations. You will find that time is of no inconvenience to us until our negotiations have concluded."~
+    ~The fiend chuckles. "We who handle bargains are accustomed to dealing even in such situations. You will find that time is of no inconvenience to us until our negotiations have concluded."~
 END
     ++ ~Then let us begin.~ + wish.1
     ++ ~Never mind. Return to where you came from, fiend.~ + wish.3
 
 CHAIN C0WL514 wish.3 
-    ~The fiend smirks before giving a formal bow. "Likely the wisest course of action. I shall take my leave then, and relay your answer to my likely-disappointed master."~
+    ~The fiend smirks before giving a formal bow. "Likely the wisest course of action. I shall take my leave then, and relay your answer to my undoubtedly disappointed master."~
     DO ~ApplySpell(Myself,POOF_GONE)~ EXIT
 
 CHAIN C0WL514 wish1
@@ -69,7 +69,7 @@ IsGabber("Imoen2")
 IsGabber("Sarevok")~ + wish5.1
 
 CHAIN C0WL514 wish4
-~Fortunately, you are quick to catch on. Before long, you begin tricking the fiend's phrasings yourself, taking some joy in seeing its gritted teeth and near outbursts of frustration. You still doubt you'll get what you want, but chances are the fiend won't be able to trick you.~
+~Fortunately, you are quick to catch on. Before long, you begin tricking the fiend's phrasings yourself, taking some joy in hearing the grinding of teeth and barely-suppressed curses. You still doubt you'll get what you want, but chances are the fiend won't be able to trick you.~
 END
 IF ~True()~ + wish5.2
 IF ~OR(4)
