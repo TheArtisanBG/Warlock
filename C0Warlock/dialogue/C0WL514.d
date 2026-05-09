@@ -99,5 +99,6 @@ IF ~CheckStatGT(LastTalkedToBy,22,CHR)
 IF ~CheckStatGT(LastTalkedToBy,24,CHR)~ DO ~ApplySpellRES("C0WL514D",LasttalkedtoBy(Myself))~ + wish6
 
 CHAIN C0WL514 wish6
-~After you sign, the fiend smiles coldly. "A pleasure doing business with you. You shall receive your expected boon upon my master being apprised of the contract's terms.~
+~After you sign, the fiend smiles coldly. "A pleasure doing business with you. You shall receive your expected boon upon my master being apprised of the contract's terms."
+~
 COPY_TRANS wish25 12
