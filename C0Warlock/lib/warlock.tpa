@@ -781,6 +781,22 @@ ACTION_IF FILE_EXISTS_IN_GAME ~baldur25.bcs~ THEN BEGIN
 EXTEND_TOP ~baldur25.bcs~ ~%MOD_FOLDER%/scripts/baldur.baf~
 END
 
+ACTION_FOR_EACH forbid_scrolls IN SCRL6D SCRL6P SCRL8L SCRL7U SCRL9Q SCRL9D BEGIN
+
+COPY_EXISTING ~%forbid_scrolls%.itm~ ~override~
+  LPF ADD_ITEM_EQEFFECT
+    INT_VAR
+      opcode = 319
+	  target = 1
+	  timing = 2
+	  parameter1 = (IDS_OF_SYMBOL (~KIT~ ~c0wlock~))
+	  parameter2 = 9
+	  power = 0
+	  special = RESOLVE_STR_REF (~Warlock~)
+      END
+
+END
+
 ////////////////////////////////////////
 /////////CREATURES//////////////////////
 ////////////////////////////////////////
@@ -888,6 +904,16 @@ EXTEND_TOP ~bddefai.bcs~ ~%MOD_FOLDER%/scripts/bddefai.baf~
 ///////////ITEMS////////////////////////
 ////////////////////////////////////////
 
+COPY_EXISTING ~splprot.2da~ ~override~ 
+	COUNT_2DA_COLS cols // amount of columns
+	READ_2DA_ENTRIES_NOW rows cols // read all file into memory  
+	FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
+	  READ_2DA_ENTRY_FORMER rows row 0 ~stat~ // read column value
+	  PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~C0_MAGE_BARD_EQUIPMENT~ BEGIN
+	    SET C0_MAGE_BARD_EQUIPMENT = %row%
+	  END
+	END
+
 COPY_EXISTING_REGEXP GLOB ~.*\.itm~ ~override~ //copies all item files
   PATCH_IF (SOURCE_SIZE > 0x71) BEGIN // avoid crashing on empty items
     READ_BYTE    0x1E row1
@@ -906,6 +932,20 @@ COPY_EXISTING_REGEXP GLOB ~.*\.itm~ ~override~ //copies all item files
 	  special = RESOLVE_STR_REF (~Warlock~)
       END
     END
+  LPF CLONE_EFFECT
+    INT_VAR
+    silent = 1
+      opcode = 319
+	  target = 1
+	  timing = 2
+	  parameter1 = (IDS_OF_SYMBOL (~KIT~ ~c0wlock~))
+    parameter2 = 9
+	  match_power = 2
+    power = 0
+	  special = RESOLVE_STR_REF (~Warlock~)
+    STR_VAR
+      match_resource = C0MGBD_
+      END
     END
 BUT_ONLY
 
@@ -929,6 +969,7 @@ WRITE_SHORT 0x21a (IDS_OF_SYMBOL (~PROJECTL~ ~C0WLP001~) + 1)
 ADD_PROJECTILE ~%MOD_FOLDER%/pro/c0wlp004.PRO~
 ADD_PROJECTILE ~%MOD_FOLDER%/pro/c0wlp005.PRO~
 ADD_PROJECTILE ~%MOD_FOLDER%/pro/c0wlpe01.PRO~
+ADD_PROJECTILE ~%MOD_FOLDER%/pro/C0WLPH01.PRO~
 
 
 // DRAINING BLAST
@@ -1254,22 +1295,64 @@ WRITE_ASCII 0x230 ~C0WLPE11~
 COPY_EXISTING ~C0WLPE01.PRO~ ~OVERRIDE/C0WLPE04.PRO~
 WRITE_ASCII 0x230 ~C0WLPE16~
 COPY_EXISTING ~C0WLPE01.PRO~ ~OVERRIDE/C0WLPE05.PRO~
+WRITE_ASCII 0x208 ~C0WLFIR1~
 WRITE_ASCII 0x230 ~C0WLPE21~
 COPY_EXISTING ~C0WLPE01.PRO~ ~OVERRIDE/C0WLPE06.PRO~
+WRITE_ASCII 0x208 ~C0WLCOL1~
 WRITE_ASCII 0x230 ~C0WLPE26~
 COPY_EXISTING ~C0WLPE01.PRO~ ~OVERRIDE/C0WLPE07.PRO~
 WRITE_ASCII 0x230 ~C0WLPE31~
 COPY_EXISTING ~C0WLPE01.PRO~ ~OVERRIDE/C0WLPE08.PRO~
+WRITE_ASCII 0x208 ~C0WLELE1~
 WRITE_ASCII 0x230 ~C0WLPE36~
 COPY_EXISTING ~C0WLPE01.PRO~ ~OVERRIDE/C0WLPE09.PRO~
+WRITE_ASCII 0x208 ~C0WLPOI1~
 WRITE_ASCII 0x230 ~C0WLPE41~
 COPY_EXISTING ~C0WLPE01.PRO~ ~OVERRIDE/C0WLPE10.PRO~
+WRITE_ASCII 0x208 ~C0WLACI1~
 WRITE_ASCII 0x230 ~C0WLPE46~
 COPY_EXISTING ~C0WLPE01.PRO~ ~OVERRIDE/C0WLPE11.PRO~
+WRITE_ASCII 0x208 ~C0WLBIN1~
 WRITE_ASCII 0x230 ~C0WLPE51~
 COPY_EXISTING ~C0WLPE01.PRO~ ~OVERRIDE/C0WLPE12.PRO~
+WRITE_ASCII 0x208 ~C0WLUTT1~
 WRITE_ASCII 0x230 ~C0WLPE56~
 COPY_EXISTING ~C0WLPE01.PRO~ ~OVERRIDE/C0WLPE13.PRO~
+WRITE_ASCII 0x208 ~C0WLHEL1~
+WRITE_ASCII 0x230 ~C0WLPE61~
+
+// Hideous Blow
+COPY_EXISTING ~C0WLPH01.PRO~ ~OVERRIDE/C0WLPH02.PRO~
+WRITE_ASCII 0x230 ~C0WLPE06~
+COPY_EXISTING ~C0WLPH01.PRO~ ~OVERRIDE/C0WLPH03.PRO~
+WRITE_ASCII 0x230 ~C0WLPE11~
+COPY_EXISTING ~C0WLPH01.PRO~ ~OVERRIDE/C0WLPH04.PRO~
+WRITE_ASCII 0x230 ~C0WLPE16~
+COPY_EXISTING ~C0WLPH01.PRO~ ~OVERRIDE/C0WLPH05.PRO~
+WRITE_ASCII 0x208 ~C0WLFIR1~
+WRITE_ASCII 0x230 ~C0WLPE21~
+COPY_EXISTING ~C0WLPH01.PRO~ ~OVERRIDE/C0WLPH06.PRO~
+WRITE_ASCII 0x208 ~C0WLCOL1~
+WRITE_ASCII 0x230 ~C0WLPE26~
+COPY_EXISTING ~C0WLPH01.PRO~ ~OVERRIDE/C0WLPH07.PRO~
+WRITE_ASCII 0x230 ~C0WLPE31~
+COPY_EXISTING ~C0WLPH01.PRO~ ~OVERRIDE/C0WLPH08.PRO~
+WRITE_ASCII 0x208 ~C0WLELE1~
+WRITE_ASCII 0x230 ~C0WLPE36~
+COPY_EXISTING ~C0WLPH01.PRO~ ~OVERRIDE/C0WLPH09.PRO~
+WRITE_ASCII 0x208 ~C0WLPOI1~
+WRITE_ASCII 0x230 ~C0WLPE41~
+COPY_EXISTING ~C0WLPH01.PRO~ ~OVERRIDE/C0WLPH10.PRO~
+WRITE_ASCII 0x208 ~C0WLACI1~
+WRITE_ASCII 0x230 ~C0WLPE46~
+COPY_EXISTING ~C0WLPH01.PRO~ ~OVERRIDE/C0WLPH11.PRO~
+WRITE_ASCII 0x208 ~C0WLBIN1~
+WRITE_ASCII 0x230 ~C0WLPE51~
+COPY_EXISTING ~C0WLPH01.PRO~ ~OVERRIDE/C0WLPH12.PRO~
+WRITE_ASCII 0x208 ~C0WLUTT1~
+WRITE_ASCII 0x230 ~C0WLPE56~
+COPY_EXISTING ~C0WLPH01.PRO~ ~OVERRIDE/C0WLPH13.PRO~
+WRITE_ASCII 0x208 ~C0WLHEL1~
 WRITE_ASCII 0x230 ~C0WLPE61~
 
 ADD_PROJECTILE ~override/c0wlpe02.PRO~
@@ -1284,6 +1367,19 @@ ADD_PROJECTILE ~override/c0wlpe10.PRO~
 ADD_PROJECTILE ~override/c0wlpe11.PRO~
 ADD_PROJECTILE ~override/c0wlpe12.PRO~
 ADD_PROJECTILE ~override/c0wlpe13.PRO~
+
+ADD_PROJECTILE ~override/C0WLPH02.PRO~
+ADD_PROJECTILE ~override/C0WLPH03.PRO~
+ADD_PROJECTILE ~override/C0WLPH04.PRO~
+ADD_PROJECTILE ~override/C0WLPH05.PRO~
+ADD_PROJECTILE ~override/C0WLPH06.PRO~
+ADD_PROJECTILE ~override/C0WLPH07.PRO~
+ADD_PROJECTILE ~override/C0WLPH08.PRO~
+ADD_PROJECTILE ~override/C0WLPH09.PRO~
+ADD_PROJECTILE ~override/C0WLPH10.PRO~
+ADD_PROJECTILE ~override/C0WLPH11.PRO~
+ADD_PROJECTILE ~override/C0WLPH12.PRO~
+ADD_PROJECTILE ~override/C0WLPH13.PRO~
 
 ADD_PROJECTILE ~override/c0wlp061.PRO~
 ADD_PROJECTILE ~override/c0wlp062.PRO~
@@ -2222,6 +2318,10 @@ END
 SAY NAME1 ~Shape: Spear~
 
 COPY_EXISTING ~c0wl101F.spl~ ~override/c0wl102a.spl~
+  LPF ALTER_SPELL_HEADER
+    INT_VAR
+	  projectile = C0WLPH01
+END
   LPF ALTER_EFFECT INT_VAR match_opcode = 146 STR_VAR match_resource = C0WL101I resource = C0WL101N END
   LPF ADD_SPELL_EFFECT
     INT_VAR
@@ -3155,6 +3255,10 @@ COPY_EXISTING ~c0wl106!.spl~ ~override/c0wl106&.spl~
 END
 
 COPY_EXISTING ~c0wl106q.spl~ ~override/c0wl106#.spl~
+  LPF ALTER_SPELL_HEADER
+    INT_VAR
+	  projectile = C0WLPH02
+END
   LPF ADD_SPELL_EFFECT
     INT_VAR
 	  opcode = 321
@@ -3247,6 +3351,10 @@ END
 END
 
 COPY_EXISTING ~c0wl107q.spl~ ~override/c0wl107#.spl~
+  LPF ALTER_SPELL_HEADER
+    INT_VAR
+	  projectile = C0WLPH03
+END
   LPF ADD_SPELL_EFFECT
     INT_VAR
 	  opcode = 321
@@ -3294,6 +3402,10 @@ Saving Throw: Neg.
 This eldritch essence invocation allows the warlock to change <PRO_HISHER> eldritch blast into a beshadowed blast. The beshadowed blast reduces the Eldritch Blast's damage to d4, but forces any creature struck to make a Save vs. Death at -1 (additional -1 penalty per two points of caster's Charisma above 17) or become blinded, receiving a -4 penalty to attack rolls and Armor Class as well as halved movement rate.~
 
 COPY_EXISTING ~c0wl201q.spl~ ~override/c0wl201#.spl~
+  LPF ALTER_SPELL_HEADER
+    INT_VAR
+	  projectile = C0WLPH04
+END
   LPF ADD_SPELL_EFFECT
     INT_VAR
 	  opcode = 321
@@ -3342,6 +3454,10 @@ Saving Throw: Neg.
 This eldritch essence invocation allows the warlock to change <PRO_HISHER> eldritch blast into a brimstone blast. A brimstone blast deals fire damage. Any creature struck by a brimstone blast must succeed on a Save vs. Breath at -2 (additional -1 penalty per two points of caster's Charisma above 17) or catch on fire, taking 2d6 points of fire damage per round until the duration expires. A creature burning in this way never takes more than 2d6 points of fire damage in a round, even if it has been hit by more than one brimstone blast.~
 
 COPY_EXISTING ~c0wl202q.spl~ ~override/c0wl202#.spl~
+  LPF ALTER_SPELL_HEADER
+    INT_VAR
+	  projectile = C0WLPH05
+END
   LPF ADD_SPELL_EFFECT
     INT_VAR
 	  opcode = 321
@@ -3390,6 +3506,10 @@ Saving Throw: Neg.
 This eldritch essence invocation allows the warlock to change <PRO_HISHER> eldritch blast into a hellrime blast. A hellrime blast deals cold damage. Any creature struck by the attack must make a Save vs. Death at -1 (additional -1 penalty per two points of caster's Charisma above 17) or take a -4 penalty to Armor Class and halved Dexterity. The penalties from multiple hellrime blasts do not stack.~
 
 COPY_EXISTING ~c0wl203q.spl~ ~override/c0wl203#.spl~
+  LPF ALTER_SPELL_HEADER
+    INT_VAR
+	  projectile = C0WLPH06
+END
   LPF ADD_SPELL_EFFECT
     INT_VAR
 	  opcode = 321
@@ -3438,6 +3558,10 @@ Saving Throw: Neg.
 This eldritch essence invocation allows the warlock to change <PRO_HISHER> eldritch blast into a bewitching blast. The bewitching blast reduces the Eldritch Blast's damage to d4, but forces any creature struck to make a Save vs. Spells at -2 (additional -1 penalty per two points of caster's Charisma above 17) or become confused. A confused target will either wander randomly, attack a random nearby creature (even allies), or simply stand still.~
 
 COPY_EXISTING ~c0wl301q.spl~ ~override/c0wl301#.spl~
+  LPF ALTER_SPELL_HEADER
+    INT_VAR
+	  projectile = C0WLPH07
+END
   LPF ADD_SPELL_EFFECT
     INT_VAR
 	  opcode = 321
@@ -3486,6 +3610,10 @@ Saving Throw: Neg.
 This eldritch essence invocation allows the warlock to change <PRO_HISHER> eldritch blast into an electrifying blast. An electrifying blast deals electrical damage. Any creature struck by the attack must make a Save vs. Breath at -2 (additional -1 penalty per two points of caster's Charisma above 17) become paralyzed. Creatures immune to electrical damage are not affected.~ 
 
 COPY_EXISTING ~c0wl302q.spl~ ~override/c0wl302#.spl~
+  LPF ALTER_SPELL_HEADER
+    INT_VAR
+	  projectile = C0WLPH08
+END
   LPF ADD_SPELL_EFFECT
     INT_VAR
 	  opcode = 321
@@ -3534,6 +3662,10 @@ Saving Throw: Neg.
 This eldritch essence invocation allows the warlock to change <PRO_HISHER> eldritch blast into a noxious blast. A noxious blast deals poison damage. Any creature struck by the attack must make a Save vs. Death at -2 (additional -1 penalty per two points of caster's Charisma above 17) or suffer a -2 penalty to all attributes and a -4 penalty to all saving throws for one turn. The effects do not stack, and creatures immune to poison are not affected.~ 
 
 COPY_EXISTING ~c0wl303q.spl~ ~override/c0wl303#.spl~
+  LPF ALTER_SPELL_HEADER
+    INT_VAR
+	  projectile = C0WLPH09
+END
   LPF ADD_SPELL_EFFECT
     INT_VAR
 	  opcode = 321
@@ -3570,6 +3702,10 @@ SAY NAME1 ~Vitriolic Blast: Hideous Blow~
 SAY UNIDENTIFIED_DESC ~%C0WL304-DESC%~ 
 
 COPY_EXISTING ~c0wl304q.spl~ ~override/c0wl304#.spl~
+  LPF ALTER_SPELL_HEADER
+    INT_VAR
+	  projectile = C0WLPH10
+END
   LPF ADD_SPELL_EFFECT
     INT_VAR
 	  opcode = 321
@@ -3618,6 +3754,10 @@ Saving Throw: None
 This eldritch essence invocation allows the warlock to change <PRO_HISHER> eldritch blast into a binding blast. The binding blast reduces the Eldritch Blast's damage to d4, but forces any creature struck to make a Save vs. Spells at -4 (additional -1 penalty per two points of caster's Charisma above 17) or be stunned for 1 round.~
 
 COPY_EXISTING ~c0wl401q.spl~ ~override/c0wl401#.spl~
+  LPF ALTER_SPELL_HEADER
+    INT_VAR
+	  projectile = C0WLPH11
+END
   LPF ADD_SPELL_EFFECT
     INT_VAR
 	  opcode = 321
@@ -3655,6 +3795,10 @@ SAY NAME1 ~Utterdark Blast: Hideous Blow~
 SAY UNIDENTIFIED_DESC ~%C0WL402-DESC%~ 
 
 COPY_EXISTING ~c0wl402q.spl~ ~override/c0wl402#.spl~
+  LPF ALTER_SPELL_HEADER
+    INT_VAR
+	  projectile = C0WLPH12
+END
   LPF ADD_SPELL_EFFECT
     INT_VAR
 	  opcode = 321
@@ -6373,6 +6517,10 @@ This eldritch essence invocation allows you to change your eldritch blast into a
 However, this power comes at a cost. Each time the warlock uses this ability, <PRO_HESHE> takes one point of Constitution damage that lasts for the next 8 hours, which may only be restored prematurely via a Restoration spell. Should <PRO_HISHER> Constitution drop to zero, <PRO_HESHE> will be killed instantly.~
 
 COPY_EXISTING ~c0wl506q.spl~ ~override/c0wl506#.spl~
+  LPF ALTER_SPELL_HEADER
+    INT_VAR
+	  projectile = C0WLPH13
+END
   LPF ADD_SPELL_EFFECT INT_VAR opcode = 146 target = 1 parameter2 = 1 timing = 1 probability1 = 100 STR_VAR resource = C0WL506T END
   LPF ADD_SPELL_EFFECT
     INT_VAR
