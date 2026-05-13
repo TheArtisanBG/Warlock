@@ -2317,11 +2317,74 @@ END
   LPF ALTER_SPELL_HEADER INT_VAR speed = 3 END
 SAY NAME1 ~Shape: Spear~
 
-COPY_EXISTING ~c0wl101F.spl~ ~override/c0wl102a.spl~
+COPY_EXISTING ~C0WLPH01.SPL~ ~OVERRIDE~
   LPF ALTER_SPELL_HEADER
     INT_VAR
+    header = 1
 	  projectile = C0WLPH01
 END
+  LPF ALTER_SPELL_HEADER
+    INT_VAR
+    header = 2
+	  projectile = C0WLPH02
+END
+  LPF ALTER_SPELL_HEADER
+    INT_VAR
+    header = 3
+	  projectile = C0WLPH03
+END
+  LPF ALTER_SPELL_HEADER
+    INT_VAR
+    header = 4
+	  projectile = C0WLPH04
+END
+  LPF ALTER_SPELL_HEADER
+    INT_VAR
+    header = 5
+	  projectile = C0WLPH05
+END
+  LPF ALTER_SPELL_HEADER
+    INT_VAR
+    header = 6
+	  projectile = C0WLPH06
+END
+  LPF ALTER_SPELL_HEADER
+    INT_VAR
+    header = 7
+	  projectile = C0WLPH07
+END
+  LPF ALTER_SPELL_HEADER
+    INT_VAR
+    header = 8
+	  projectile = C0WLPH08
+END
+  LPF ALTER_SPELL_HEADER
+    INT_VAR
+    header = 9
+	  projectile = C0WLPH09
+END
+  LPF ALTER_SPELL_HEADER
+    INT_VAR
+    header = 10
+	  projectile = C0WLPH10
+END
+  LPF ALTER_SPELL_HEADER
+    INT_VAR
+    header = 11
+	  projectile = C0WLPH11
+END
+  LPF ALTER_SPELL_HEADER
+    INT_VAR
+    header = 12
+	  projectile = C0WLPH12
+END
+  LPF ALTER_SPELL_HEADER
+    INT_VAR
+    header = 13
+	  projectile = C0WLPH13
+END
+
+COPY_EXISTING ~c0wl101F.spl~ ~override/c0wl102a.spl~
   LPF ALTER_EFFECT INT_VAR match_opcode = 146 STR_VAR match_resource = C0WL101I resource = C0WL101N END
   LPF ADD_SPELL_EFFECT
     INT_VAR
@@ -2346,6 +2409,16 @@ END
 	  parameter2 = 1
 	STR_VAR
 	  resource = c0wl102
+END
+  LPF ADD_SPELL_EFFECT
+    INT_VAR
+	  opcode = 146
+	  target = 2
+	  timing = 1
+	  parameter1 = 1
+	  parameter2 = 2
+	STR_VAR
+	  resource = c0wlph01
 END
 SAY NAME1 ~Hideous Blow~
 
@@ -3255,9 +3328,15 @@ COPY_EXISTING ~c0wl106!.spl~ ~override/c0wl106&.spl~
 END
 
 COPY_EXISTING ~c0wl106q.spl~ ~override/c0wl106#.spl~
-  LPF ALTER_SPELL_HEADER
+  LPF ADD_SPELL_EFFECT
     INT_VAR
-	  projectile = C0WLPH02
+	  opcode = 146
+	  target = 2
+	  timing = 1
+	  parameter1 = 2
+	  parameter2 = 2
+	STR_VAR
+	  resource = c0wlph01
 END
   LPF ADD_SPELL_EFFECT
     INT_VAR
@@ -3351,9 +3430,15 @@ END
 END
 
 COPY_EXISTING ~c0wl107q.spl~ ~override/c0wl107#.spl~
-  LPF ALTER_SPELL_HEADER
+  LPF ADD_SPELL_EFFECT
     INT_VAR
-	  projectile = C0WLPH03
+	  opcode = 146
+	  target = 2
+	  timing = 1
+	  parameter1 = 3
+	  parameter2 = 2
+	STR_VAR
+	  resource = c0wlph01
 END
   LPF ADD_SPELL_EFFECT
     INT_VAR
@@ -3402,9 +3487,15 @@ Saving Throw: Neg.
 This eldritch essence invocation allows the warlock to change <PRO_HISHER> eldritch blast into a beshadowed blast. The beshadowed blast reduces the Eldritch Blast's damage to d4, but forces any creature struck to make a Save vs. Death at -1 (additional -1 penalty per two points of caster's Charisma above 17) or become blinded, receiving a -4 penalty to attack rolls and Armor Class as well as halved movement rate.~
 
 COPY_EXISTING ~c0wl201q.spl~ ~override/c0wl201#.spl~
-  LPF ALTER_SPELL_HEADER
+  LPF ADD_SPELL_EFFECT
     INT_VAR
-	  projectile = C0WLPH04
+	  opcode = 146
+	  target = 2
+	  timing = 1
+	  parameter1 = 4
+	  parameter2 = 2
+	STR_VAR
+	  resource = c0wlph01
 END
   LPF ADD_SPELL_EFFECT
     INT_VAR
@@ -3454,9 +3545,15 @@ Saving Throw: Neg.
 This eldritch essence invocation allows the warlock to change <PRO_HISHER> eldritch blast into a brimstone blast. A brimstone blast deals fire damage. Any creature struck by a brimstone blast must succeed on a Save vs. Breath at -2 (additional -1 penalty per two points of caster's Charisma above 17) or catch on fire, taking 2d6 points of fire damage per round until the duration expires. A creature burning in this way never takes more than 2d6 points of fire damage in a round, even if it has been hit by more than one brimstone blast.~
 
 COPY_EXISTING ~c0wl202q.spl~ ~override/c0wl202#.spl~
-  LPF ALTER_SPELL_HEADER
+  LPF ADD_SPELL_EFFECT
     INT_VAR
-	  projectile = C0WLPH05
+	  opcode = 146
+	  target = 2
+	  timing = 1
+	  parameter1 = 5
+	  parameter2 = 2
+	STR_VAR
+	  resource = c0wlph01
 END
   LPF ADD_SPELL_EFFECT
     INT_VAR
@@ -3506,9 +3603,15 @@ Saving Throw: Neg.
 This eldritch essence invocation allows the warlock to change <PRO_HISHER> eldritch blast into a hellrime blast. A hellrime blast deals cold damage. Any creature struck by the attack must make a Save vs. Death at -1 (additional -1 penalty per two points of caster's Charisma above 17) or take a -4 penalty to Armor Class and halved Dexterity. The penalties from multiple hellrime blasts do not stack.~
 
 COPY_EXISTING ~c0wl203q.spl~ ~override/c0wl203#.spl~
-  LPF ALTER_SPELL_HEADER
+  LPF ADD_SPELL_EFFECT
     INT_VAR
-	  projectile = C0WLPH06
+	  opcode = 146
+	  target = 2
+	  timing = 1
+	  parameter1 = 6
+	  parameter2 = 2
+	STR_VAR
+	  resource = c0wlph01
 END
   LPF ADD_SPELL_EFFECT
     INT_VAR
@@ -3558,9 +3661,15 @@ Saving Throw: Neg.
 This eldritch essence invocation allows the warlock to change <PRO_HISHER> eldritch blast into a bewitching blast. The bewitching blast reduces the Eldritch Blast's damage to d4, but forces any creature struck to make a Save vs. Spells at -2 (additional -1 penalty per two points of caster's Charisma above 17) or become confused. A confused target will either wander randomly, attack a random nearby creature (even allies), or simply stand still.~
 
 COPY_EXISTING ~c0wl301q.spl~ ~override/c0wl301#.spl~
-  LPF ALTER_SPELL_HEADER
+  LPF ADD_SPELL_EFFECT
     INT_VAR
-	  projectile = C0WLPH07
+	  opcode = 146
+	  target = 2
+	  timing = 1
+	  parameter1 = 7
+	  parameter2 = 2
+	STR_VAR
+	  resource = c0wlph01
 END
   LPF ADD_SPELL_EFFECT
     INT_VAR
@@ -3610,9 +3719,15 @@ Saving Throw: Neg.
 This eldritch essence invocation allows the warlock to change <PRO_HISHER> eldritch blast into an electrifying blast. An electrifying blast deals electrical damage. Any creature struck by the attack must make a Save vs. Breath at -2 (additional -1 penalty per two points of caster's Charisma above 17) become paralyzed. Creatures immune to electrical damage are not affected.~ 
 
 COPY_EXISTING ~c0wl302q.spl~ ~override/c0wl302#.spl~
-  LPF ALTER_SPELL_HEADER
+  LPF ADD_SPELL_EFFECT
     INT_VAR
-	  projectile = C0WLPH08
+	  opcode = 146
+	  target = 2
+	  timing = 1
+	  parameter1 = 8
+	  parameter2 = 2
+	STR_VAR
+	  resource = c0wlph01
 END
   LPF ADD_SPELL_EFFECT
     INT_VAR
@@ -3662,9 +3777,15 @@ Saving Throw: Neg.
 This eldritch essence invocation allows the warlock to change <PRO_HISHER> eldritch blast into a noxious blast. A noxious blast deals poison damage. Any creature struck by the attack must make a Save vs. Death at -2 (additional -1 penalty per two points of caster's Charisma above 17) or suffer a -2 penalty to all attributes and a -4 penalty to all saving throws for one turn. The effects do not stack, and creatures immune to poison are not affected.~ 
 
 COPY_EXISTING ~c0wl303q.spl~ ~override/c0wl303#.spl~
-  LPF ALTER_SPELL_HEADER
+  LPF ADD_SPELL_EFFECT
     INT_VAR
-	  projectile = C0WLPH09
+	  opcode = 146
+	  target = 2
+	  timing = 1
+	  parameter1 = 9
+	  parameter2 = 2
+	STR_VAR
+	  resource = c0wlph01
 END
   LPF ADD_SPELL_EFFECT
     INT_VAR
@@ -3702,9 +3823,15 @@ SAY NAME1 ~Vitriolic Blast: Hideous Blow~
 SAY UNIDENTIFIED_DESC ~%C0WL304-DESC%~ 
 
 COPY_EXISTING ~c0wl304q.spl~ ~override/c0wl304#.spl~
-  LPF ALTER_SPELL_HEADER
+  LPF ADD_SPELL_EFFECT
     INT_VAR
-	  projectile = C0WLPH10
+	  opcode = 146
+	  target = 2
+	  timing = 1
+	  parameter1 = 10
+	  parameter2 = 2
+	STR_VAR
+	  resource = c0wlph01
 END
   LPF ADD_SPELL_EFFECT
     INT_VAR
@@ -3754,9 +3881,15 @@ Saving Throw: None
 This eldritch essence invocation allows the warlock to change <PRO_HISHER> eldritch blast into a binding blast. The binding blast reduces the Eldritch Blast's damage to d4, but forces any creature struck to make a Save vs. Spells at -4 (additional -1 penalty per two points of caster's Charisma above 17) or be stunned for 1 round.~
 
 COPY_EXISTING ~c0wl401q.spl~ ~override/c0wl401#.spl~
-  LPF ALTER_SPELL_HEADER
+  LPF ADD_SPELL_EFFECT
     INT_VAR
-	  projectile = C0WLPH11
+	  opcode = 146
+	  target = 2
+	  timing = 1
+	  parameter1 = 11
+	  parameter2 = 2
+	STR_VAR
+	  resource = c0wlph01
 END
   LPF ADD_SPELL_EFFECT
     INT_VAR
@@ -3795,9 +3928,15 @@ SAY NAME1 ~Utterdark Blast: Hideous Blow~
 SAY UNIDENTIFIED_DESC ~%C0WL402-DESC%~ 
 
 COPY_EXISTING ~c0wl402q.spl~ ~override/c0wl402#.spl~
-  LPF ALTER_SPELL_HEADER
+  LPF ADD_SPELL_EFFECT
     INT_VAR
-	  projectile = C0WLPH12
+	  opcode = 146
+	  target = 2
+	  timing = 1
+	  parameter1 = 12
+	  parameter2 = 2
+	STR_VAR
+	  resource = c0wlph01
 END
   LPF ADD_SPELL_EFFECT
     INT_VAR
@@ -6220,6 +6359,7 @@ However, this power comes at a cost. Each time the warlock uses this ability, <P
 
 COPY_EXISTING ~c0wl101n.spl~ ~override/C0WL506n.spl~
 WRITE_SHORT 0x1c 3
+  LPF ADD_SPELL_EFFECT INT_VAR insert_point = 0 opcode = 326 target = 2 parameter2 = MFIRE STR_VAR resource = C0WLI02A END
   LPF ALTER_EFFECT INT_VAR match_opcode = 146 STR_VAR match_resource = C0WL101I resource = C0WL506R END
   SAY NAME1 #-1
 
@@ -6250,6 +6390,7 @@ This eldritch essence invocation allows you to change your eldritch blast into a
 However, this power comes at a cost. Each time the warlock uses this ability, <PRO_HESHE> takes one point of Constitution damage that lasts for the next 8 hours, which may only be restored prematurely via a Restoration spell. Should <PRO_HISHER> Constitution drop to zero, <PRO_HESHE> will be killed instantly.~
 
 COPY_EXISTING ~c0wl101a.ITM~ ~override/c0wl506.itm~
+  LPF ADD_SPELL_EFFECT INT_VAR insert_point = 0 opcode = 326 target = 2 parameter2 = MFIRE STR_VAR resource = C0WLI02A END
   LPF ALTER_ITEM_HEADER
     INT_VAR
 	  projectile = c0wlp061
@@ -6296,6 +6437,7 @@ COPY_EXISTING ~c0wl200a.ITM~ ~override/c0wl506s.itm~
 	STR_VAR
 	  icon = "C0W@506B"
   END
+  LPF ADD_SPELL_EFFECT INT_VAR insert_point = 0 opcode = 326 target = 2 parameter2 = MFIRE STR_VAR resource = C0WLI02A END
   LPF ALTER_EFFECT INT_VAR match_opcode = 146 STR_VAR match_resource = C0WL200F resource = C0WL506V END
   LPF ALTER_EFFECT INT_VAR match_opcode = 215 STR_VAR match_resource = C0WL101Y resource = C0WL506Y END
   LPF ADD_SPELL_EFFECT INT_VAR opcode = 146 target = 1 parameter2 = 1 timing = 1 probability1 = 100 STR_VAR resource = C0WL506T END
@@ -6330,6 +6472,7 @@ COPY_EXISTING ~c0wl500.ITM~ ~override/C0WL506I.itm~
 	STR_VAR
 	  icon = "c0wg506b"
   END
+  LPF ADD_SPELL_EFFECT INT_VAR insert_point = 0 opcode = 326 target = 2 parameter2 = MFIRE STR_VAR resource = C0WLI02A END
   LPF ALTER_EFFECT INT_VAR match_opcode = 146 STR_VAR resource = C0WL506J END
   LPF ALTER_EFFECT_EX INT_VAR match_opcode = 8 STR_VAR parameter1_ex = ~"548857856"~ END
   LPF CLONE_EFFECT_EX INT_VAR match_opcode = 8 parameter2 = 21 STR_VAR parameter1_ex = ~"459066368"~ END
@@ -6373,6 +6516,7 @@ COPY_EXISTING ~c0wl200a.ITM~ ~override/c0wl506H.itm~
 	STR_VAR
 	  icon = "c0w#506b"
   END
+  LPF ADD_SPELL_EFFECT INT_VAR insert_point = 0 opcode = 326 target = 2 parameter2 = MFIRE STR_VAR resource = C0WLI02A END
   LPF ALTER_EFFECT INT_VAR match_opcode = 146 STR_VAR match_resource = C0WL200F resource = C0WL506H END
   LPF ALTER_EFFECT INT_VAR match_opcode = 215 STR_VAR match_resource = C0WL101Y resource = C0WL506Y END
   LPF ADD_SPELL_EFFECT INT_VAR opcode = 146 target = 1 parameter2 = 1 timing = 1 probability1 = 100 STR_VAR resource = C0WL506T END
@@ -6517,9 +6661,16 @@ This eldritch essence invocation allows you to change your eldritch blast into a
 However, this power comes at a cost. Each time the warlock uses this ability, <PRO_HESHE> takes one point of Constitution damage that lasts for the next 8 hours, which may only be restored prematurely via a Restoration spell. Should <PRO_HISHER> Constitution drop to zero, <PRO_HESHE> will be killed instantly.~
 
 COPY_EXISTING ~c0wl506q.spl~ ~override/c0wl506#.spl~
-  LPF ALTER_SPELL_HEADER
+  LPF ADD_SPELL_EFFECT INT_VAR insert_point = 0 opcode = 326 target = 2 parameter2 = MFIRE STR_VAR resource = C0WLI02A END
+  LPF ADD_SPELL_EFFECT
     INT_VAR
-	  projectile = C0WLPH13
+	  opcode = 146
+	  target = 2
+	  timing = 1
+	  parameter1 = 13
+	  parameter2 = 2
+	STR_VAR
+	  resource = c0wlph01
 END
   LPF ADD_SPELL_EFFECT INT_VAR opcode = 146 target = 1 parameter2 = 1 timing = 1 probability1 = 100 STR_VAR resource = C0WL506T END
   LPF ADD_SPELL_EFFECT
@@ -6591,6 +6742,15 @@ Once the contract is made, the warlock must then sign with blood and sacrifice a
 This ability may be selected up to three times.
 
 Requires: Call Fiend~ 
+
+COPY_EXISTING ~C0WLI021.SPL~ ~OVERRIDE~
+LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = MFIRE STR_VAR match_resource = C0WLI02A END
+
+COPY_EXISTING ~C0WLI022.SPL~ ~OVERRIDE~
+LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = MFIRE STR_VAR match_resource = C0WLI02A END
+
+COPY_EXISTING ~C0WLI023.SPL~ ~OVERRIDE~
+LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = MFIRE STR_VAR match_resource = C0WLI02A END
 
 ACTION_IF FILE_EXISTS_IN_GAME ~WISH25.DLG~ THEN BEGIN
 COPY_EXISTING ~WISH25.DLG~ ~override~

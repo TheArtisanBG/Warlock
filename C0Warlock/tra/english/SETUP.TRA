@@ -640,14 +640,14 @@ Weight: 10~
 STATISTICS:
 
 Equipped abilities:
-– All fire damage inflicted by the wielder is increased by 20%
+– All fire damage inflicted by the wielder is increased by 10%
 – Maximum Hit Points: -20%
 
 Combat abilities:
 – Deals an additional 2 points of unmitigated fire damage per round for 3 rounds on a failed Save vs. Death at -2
 
 THAC0: +2
-Damage: 2d4, +2d6+2 unmitigated fire damage
+Damage: 2d4, +1d4+2 unmitigated fire damage
 Damage type: slashing
 Speed Factor: 6
 Proficiency Type: Bastard Sword
@@ -682,16 +682,15 @@ Staining the blade with the blood of a tanar'ri, the mortal enemies of the baate
 STATISTICS:
 
 Equipped abilities:
-– All fire damage inflicted by the wielder is increased by 30%
+– All fire damage inflicted by the wielder is increased by 20%
 – Strength: +1
-– 1 extra attack per round
 – Maximum Hit Points: -20%
 
 Combat abilities:
 – Deals an additional 2 points of unmitigated fire damage per round for 3 rounds on a failed Save vs. Death at -4
 
 THAC0: +3, strikes as a +4 weapon
-Damage: 2d4, +3d6+2 unmitigated fire damage
+Damage: 2d4, +2d4+2 unmitigated fire damage
 Damage type: slashing
 Speed Factor: 6
 Proficiency Type: Bastard Sword
