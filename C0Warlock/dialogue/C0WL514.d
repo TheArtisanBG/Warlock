@@ -102,3 +102,9 @@ CHAIN C0WL514 wish6
 ~After you sign, the fiend smiles coldly. "A pleasure doing business with you. You shall receive your expected boon upon my master being apprised of the contract's terms."
 ~
 COPY_TRANS wish25 12
+
+EXTEND_BOTTOM C0WL514 wish6
++ ~Kit(LastTalkedToBy,C0WLOCK)
+Global("WishPower22","GLOBAL",1)~ + ~Cast Greater Restoration on the caster and restore all hit points sacrificed by previous bargains.~ DO ~ActionOverride(LastTalkedToBy,ForceSpellRES("C0WL514E",Myself))
+ApplySpell(Myself,POOF_GONE)~ EXIT
+END
