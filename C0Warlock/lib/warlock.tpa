@@ -783,6 +783,7 @@ END
 
 ACTION_FOR_EACH forbid_scrolls IN SCRL6D SCRL6P SCRL8L SCRL7U SCRL9Q SCRL9D BEGIN
 
+ACTION_IF FILE_EXISTS_IN_GAME ~%forbid_scrolls%.itm~ THEN BEGIN
 COPY_EXISTING ~%forbid_scrolls%.itm~ ~override~
   LPF ADD_ITEM_EQEFFECT
     INT_VAR
@@ -794,7 +795,7 @@ COPY_EXISTING ~%forbid_scrolls%.itm~ ~override~
 	  power = 0
 	  special = RESOLVE_STR_REF (~Warlock~)
       END
-
+  END
 END
 
 ////////////////////////////////////////
