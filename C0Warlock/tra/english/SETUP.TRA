@@ -535,7 +535,21 @@ Casting Time: 9
 Area of Effect: the caster
 Saving Throw: None
 
-With this invocation, the warlock utters a powerful word that transforms him into a devilish being, often connected to whatever outsider granted the warlock <PRO_HISHER> fiendish powers. The warlock may not use invocations while transformed.~
+With this invocation, the warlock utters a powerful word that transforms <PRO_HIMHER> into a devilish being, often connected to whatever outsider granted the warlock <PRO_HISHER> fiendish powers. The warlock may not use invocations while transformed.
+
+The statistics of the form are as follows:
+  Strength: 24
+  Dexterity: 22
+  -5 base Armor Class
+  2 attacks per round
+  20% physical resistance
+  Regenerate 1hp/3 seconds
+  Immunity to weapons of +1 enchantment and below
+  Immunity to charm, poison, domination, fear and confusion
+  Creature attack attributes:
+    1d6+3 slashing damage
+    stun the target on a failed Save vs. Breath for 10 seconds
+    poison the target on a failed Save vs. Death at -2 for 1 damage per second for 10 seconds~
 @107  = ~Shapeshift: Natural Form~
 @108  = ~Shapeshift: Natural Form
 This ability causes the character to return to <PRO_HISHER> natural shape and ends the polymorph effect.~
