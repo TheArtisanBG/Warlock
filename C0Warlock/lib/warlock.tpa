@@ -6195,6 +6195,52 @@ END
 SAY NAME1 ~%C0WL308-NAME%~
 SAY UNIDENTIFIED_DESC ~%C0WL308-DESC%~
 
+COPY_EXISTING ~c0wl3081.spl~ ~override~
+	LPF ALTER_EFFECT
+	  INT_VAR
+    silent = 1
+		match_opcode = 326
+		match_parameter2 = 132
+		parameter2 = EVAL %C0WLCHA%
+	END
+
+COPY_EXISTING ~c0wl308a.spl~ ~override/c0wl308b.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+    match_opcode = 12
+    parameter1 = 1
+END
+COPY_EXISTING ~c0wl308a.spl~ ~override/c0wl308C.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+    match_opcode = 12
+    parameter1 = 2
+END
+COPY_EXISTING ~c0wl308a.spl~ ~override/c0wl308D.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+    match_opcode = 12
+    parameter1 = 3
+END
+COPY_EXISTING ~c0wl308a.spl~ ~override/c0wl308E.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+    match_opcode = 12
+    parameter1 = 4
+END
+COPY_EXISTING ~c0wl308a.spl~ ~override/c0wl308F.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+    match_opcode = 12
+    parameter1 = 6
+END
+COPY_EXISTING ~c0wl308a.spl~ ~override/c0wl308G.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+    match_opcode = 12
+    parameter1 = 7
+END
+
 COPY_EXISTING ~c0wl309.spl~ ~override~
 READ_LONG 0x64 "abil_off"
 READ_SHORT 0x68 "abil_num"
