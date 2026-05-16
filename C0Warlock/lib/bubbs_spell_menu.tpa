@@ -261,6 +261,18 @@ LPF ALTER_EFFECT INT_VAR match_opcode = 318 silent = 1 STR_VAR match_resource = 
 LPF ALTER_EFFECT INT_VAR match_opcode = 324 silent = 1 STR_VAR match_resource = EVAL ~C0WL%lv1spell%~ resource = EVAL ~C0W_%lv1spell%~ END
 LPF ALTER_EFFECT INT_VAR silent = 1 match_opcode = 321 STR_VAR match_resource = EVAL ~C0WL%lv1spell%~ resource = EVAL ~C0W_%lv1spell%~ END
 SAY NAME1 #-1
+
+ACTION_FOR_EACH subspells IN A B C D E F G H I J K L M N O P Q R S T U V W X Y Z 1 2 3 4 5 6 7 8 9 0 BEGIN
+ACTION_IF FILE_EXISTS_IN_GAME ~C0WL%lv1spell%%subspells%.spl~ THEN BEGIN
+COPY_EXISTING ~C0WL%lv1spell%%subspells%.spl~ ~override~
+LPF ALTER_EFFECT INT_VAR match_opcode = 206 silent = 1 STR_VAR match_resource = EVAL ~C0WL%lv1spell%~ resource = EVAL ~C0W_%lv1spell%~ END
+LPF ALTER_EFFECT INT_VAR match_opcode = 321 silent = 1 STR_VAR match_resource = EVAL ~C0WL%lv1spell%~ resource = EVAL ~C0W_%lv1spell%~ END
+LPF ALTER_EFFECT INT_VAR match_opcode = 318 silent = 1 STR_VAR match_resource = EVAL ~C0WL%lv1spell%~ resource = EVAL ~C0W_%lv1spell%~ END
+LPF ALTER_EFFECT INT_VAR match_opcode = 324 silent = 1 STR_VAR match_resource = EVAL ~C0WL%lv1spell%~ resource = EVAL ~C0W_%lv1spell%~ END
+LPF ALTER_EFFECT INT_VAR silent = 1 match_opcode = 321 STR_VAR match_resource = EVAL ~C0WL%lv1spell%~ resource = EVAL ~C0W_%lv1spell%~ END
+END
+END
+
 COPY_EXISTING ~C0WL%lv1spell%.spl~ ~override~
 WRITE_SHORT 0x1C 3 
 LPF ALTER_SPELL_HEADER INT_VAR location = 2 END
@@ -294,6 +306,18 @@ LPF ALTER_EFFECT INT_VAR match_opcode = 318 silent = 1 STR_VAR match_resource = 
 LPF ALTER_EFFECT INT_VAR match_opcode = 324 silent = 1 STR_VAR match_resource = EVAL ~C0WL%lv2spell%~ resource = EVAL ~C0W_%lv2spell%~ END
 LPF ALTER_EFFECT INT_VAR silent = 1 match_opcode = 321 STR_VAR match_resource = EVAL ~C0WL%lv2spell%~ resource = EVAL ~C0W_%lv2spell%~ END
 SAY NAME1 #-1
+
+ACTION_FOR_EACH subspells IN A B C D E F G H I J K L M N O P Q R S T U V W X Y Z 1 2 3 4 5 6 7 8 9 0 BEGIN
+ACTION_IF FILE_EXISTS_IN_GAME ~C0WL%lv2spell%%subspells%.spl~ THEN BEGIN
+COPY_EXISTING ~C0WL%lv2spell%%subspells%.spl~ ~override~
+LPF ALTER_EFFECT INT_VAR match_opcode = 206 silent = 1 STR_VAR match_resource = EVAL ~C0WL%lv2spell%~ resource = EVAL ~C0W_%lv2spell%~ END
+LPF ALTER_EFFECT INT_VAR match_opcode = 321 silent = 1 STR_VAR match_resource = EVAL ~C0WL%lv2spell%~ resource = EVAL ~C0W_%lv2spell%~ END
+LPF ALTER_EFFECT INT_VAR match_opcode = 318 silent = 1 STR_VAR match_resource = EVAL ~C0WL%lv2spell%~ resource = EVAL ~C0W_%lv2spell%~ END
+LPF ALTER_EFFECT INT_VAR match_opcode = 324 silent = 1 STR_VAR match_resource = EVAL ~C0WL%lv2spell%~ resource = EVAL ~C0W_%lv2spell%~ END
+LPF ALTER_EFFECT INT_VAR silent = 1 match_opcode = 321 STR_VAR match_resource = EVAL ~C0WL%lv2spell%~ resource = EVAL ~C0W_%lv2spell%~ END
+END
+END
+
 COPY_EXISTING ~C0WL%lv2spell%.spl~ ~override~
 WRITE_SHORT 0x1C 3
 LPF ALTER_SPELL_HEADER INT_VAR location = 2 END
@@ -326,6 +350,18 @@ LPF ALTER_EFFECT INT_VAR match_opcode = 318 silent = 1 STR_VAR match_resource = 
 LPF ALTER_EFFECT INT_VAR match_opcode = 324 silent = 1 STR_VAR match_resource = EVAL ~C0WL%lv3spell%~ resource = EVAL ~C0W_%lv3spell%~ END
 LPF ALTER_EFFECT INT_VAR silent = 1 match_opcode = 321 STR_VAR match_resource = EVAL ~C0WL%lv3spell%~ resource = EVAL ~C0W_%lv3spell%~ END
 SAY NAME1 #-1
+
+ACTION_FOR_EACH subspells IN A B C D E F G H I J K L M N O P Q R S T U V W X Y Z 1 2 3 4 5 6 7 8 9 0 BEGIN
+ACTION_IF FILE_EXISTS_IN_GAME ~C0WL%lv3spell%%subspells%.spl~ THEN BEGIN
+COPY_EXISTING ~C0WL%lv3spell%%subspells%.spl~ ~override~
+LPF ALTER_EFFECT INT_VAR match_opcode = 206 silent = 1 STR_VAR match_resource = EVAL ~C0WL%lv3spell%~ resource = EVAL ~C0W_%lv3spell%~ END
+LPF ALTER_EFFECT INT_VAR match_opcode = 321 silent = 1 STR_VAR match_resource = EVAL ~C0WL%lv3spell%~ resource = EVAL ~C0W_%lv3spell%~ END
+LPF ALTER_EFFECT INT_VAR match_opcode = 318 silent = 1 STR_VAR match_resource = EVAL ~C0WL%lv3spell%~ resource = EVAL ~C0W_%lv3spell%~ END
+LPF ALTER_EFFECT INT_VAR match_opcode = 324 silent = 1 STR_VAR match_resource = EVAL ~C0WL%lv3spell%~ resource = EVAL ~C0W_%lv3spell%~ END
+LPF ALTER_EFFECT INT_VAR silent = 1 match_opcode = 321 STR_VAR match_resource = EVAL ~C0WL%lv3spell%~ resource = EVAL ~C0W_%lv3spell%~ END
+END
+END
+
 COPY_EXISTING ~C0WL%lv3spell%.spl~ ~override~
 WRITE_SHORT 0x1C 3
 LPF ALTER_SPELL_HEADER INT_VAR location = 2 END
@@ -358,6 +394,18 @@ LPF ALTER_EFFECT INT_VAR match_opcode = 318 silent = 1 STR_VAR match_resource = 
 LPF ALTER_EFFECT INT_VAR match_opcode = 324 silent = 1 STR_VAR match_resource = EVAL ~C0WL%lv4spell%~ resource = EVAL ~C0W_%lv4spell%~ END
 LPF ALTER_EFFECT INT_VAR silent = 1 match_opcode = 321 STR_VAR match_resource = EVAL ~C0WL%lv4spell%~ resource = EVAL ~C0W_%lv4spell%~ END
 SAY NAME1 #-1
+
+ACTION_FOR_EACH subspells IN A B C D E F G H I J K L M N O P Q R S T U V W X Y Z 1 2 3 4 5 6 7 8 9 0 BEGIN
+ACTION_IF FILE_EXISTS_IN_GAME ~C0WL%lv4spell%%subspells%.spl~ THEN BEGIN
+COPY_EXISTING ~C0WL%lv4spell%%subspells%.spl~ ~override~
+LPF ALTER_EFFECT INT_VAR match_opcode = 206 silent = 1 STR_VAR match_resource = EVAL ~C0WL%lv4spell%~ resource = EVAL ~C0W_%lv4spell%~ END
+LPF ALTER_EFFECT INT_VAR match_opcode = 321 silent = 1 STR_VAR match_resource = EVAL ~C0WL%lv4spell%~ resource = EVAL ~C0W_%lv4spell%~ END
+LPF ALTER_EFFECT INT_VAR match_opcode = 318 silent = 1 STR_VAR match_resource = EVAL ~C0WL%lv4spell%~ resource = EVAL ~C0W_%lv4spell%~ END
+LPF ALTER_EFFECT INT_VAR match_opcode = 324 silent = 1 STR_VAR match_resource = EVAL ~C0WL%lv4spell%~ resource = EVAL ~C0W_%lv4spell%~ END
+LPF ALTER_EFFECT INT_VAR silent = 1 match_opcode = 321 STR_VAR match_resource = EVAL ~C0WL%lv4spell%~ resource = EVAL ~C0W_%lv4spell%~ END
+END
+END
+
 COPY_EXISTING ~C0WL%lv4spell%.spl~ ~override~
 WRITE_SHORT 0x1C 3
 LPF ALTER_SPELL_HEADER INT_VAR location = 2 END
